@@ -1,4 +1,4 @@
-baseURL: "http://localhost:1313/"
+baseURL: "https://valex2.github.io/hugo-test/"
 languageCode: "en-us"
 title: "Vassili Alexopoulos"
 theme: "hugo-profile"
