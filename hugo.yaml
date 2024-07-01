@@ -1,6 +1,6 @@
-baseURL: 'https://example.org/'
-languageCode: 'en-us'
-title: 'My New Hugo Site'
+baseURL: "https://example.com"
+languageCode: "en-us"
+title: "Hugo-profile"
 theme: "hugo-profile"
 
 googleanalytics: UA-xxxxxxxx-x
@@ -13,7 +13,7 @@ taxonomies:
 
 params:
   favicon: "/images/hugo.png"
-  description: "A high performance Hugo theme for personal website. It is single page portfolio. It has blog, contact sections also. Contact is powered by formspree."
+  description: "A hugh performance hugo theme for personal website. It is single page portfolio. It has blog, contact sections also. Contact is powered by formspree."
   disqus: ""
   copyright: "2020"
 
@@ -30,8 +30,8 @@ params:
   
   # Navbar Menus
   customMenus:
-    - name: "Blog"
-      Url: "/blog"
+  - name: "Blog"
+    Url: "/blog"
     
   # Home
   name: "Gurusabarish"
@@ -54,58 +54,63 @@ params:
 
   # About
   profile_image: "/images/gurusabarish.webp"
-  descripe_l1_person: "Hi, I'm Gurusabarish, a passionate web developer and ML engineer. I tend to make use of modern web technologies to build websites that looks great, feels fantastic, and functions correctly."
-  descripe_l2_person: "This is just an example for about section. You can easily change with the help of config file."
+  descripe_l1_person: "Hi, I'm Gurusabarish, a passionate web developer and ML engineer. 
+  I tend to make use of modern web technologies to build websites that looks great, feels fantastic, and functions correctly."
+  descripe_l2_person: "This is just a example for about section. You can easily change with the help of cofig file."
   job: "your role"
   resume: ""
   
-  # Projects
+  #projects
   projects:
-    enable: true
-    items:
-      - title: "Project name"
-        image: "/images/project.webp"
-        description: "This is your description"
-        secoundarylink: true
-        secoundaryurlname: "Secoundary link"
-        secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
-        sourceurl: "https://github.com/gurusabarish/hugo-profile"
-      - title: "Project name"
-        image: "/images/performance.webp"
-        description: "This is your description"
-        secoundarylink: true
-        secoundaryurlname: "Secoundary link"
-        secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
-        sourceurl: "https://github.com/gurusabarish/hugo-profile"
-      - title: "Project name"
-        image: "/images/project.webp"
-        description: "This is your description"
-        secoundarylink: true
-        secoundaryurlname: "Secoundary link"
-        secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
-        sourceurl: "https://github.com/gurusabarish/hugo-profile"
-      - title: "Project name"
-        image: "/images/performance.webp"
-        description: "This is your description"
-        secoundarylink: true
-        secoundaryurlname: "Secoundary link"
-        secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
-        sourceurl: "https://github.com/gurusabarish/hugo-profile"
-      - title: "Project name"
-        image: "/images/project.webp"
-        description: "This is your description"
-        secoundarylink: true
-        secoundaryurlname: "Secoundary link"
-        secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
-        sourceurl: "https://github.com/gurusabarish/hugo-profile"
-      - title: "Project name"
-        image: "/images/performance.webp"
-        description: "This is your description"
-        secoundarylink: true
-        secoundaryurlname: "Secoundary link"
-        secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
-        sourceurl: "https://github.com/gurusabarish/hugo-profile"
+  - title: "Project name"
+    image: "/images/project.webp"
+    description:  "This is your description"
+    secoundarylink: true
+    secoundaryurlname: "Secoundary link"
+    secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
+    sourceurl: "https://github.com/gurusabarish/hugo-profile"
   
+  - title: "Project name"
+    image: "/images/performance.webp"
+    description:  "This is your description"
+    secoundarylink: true
+    secoundaryurlname: "Secoundary link"
+    secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
+    sourceurl: "https://github.com/gurusabarish/hugo-profile"
+
+  - title: "Project name"
+    image: "/images/project.webp"
+    description:  "This is your description"
+    secoundarylink: true
+    secoundaryurlname: "Secoundary link"
+    secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
+    sourceurl: "https://github.com/gurusabarish/hugo-profile"
+
+  - title: "Project name"
+    image: "/images/performance.webp"
+    description:  "This is your description"
+    secoundarylink: true
+    secoundaryurlname: "Secoundary link"
+    secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
+    sourceurl: "https://github.com/gurusabarish/hugo-profile"
+
+  - title: "Project name"
+    image: "/images/project.webp"
+    description:  "This is your description"
+    secoundarylink: true
+    secoundaryurlname: "Secoundary link"
+    secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
+    sourceurl: "https://github.com/gurusabarish/hugo-profile"
+
+  - title: "Project name"
+    image: "/images/performance.webp"
+    description:  "This is your description"
+    secoundarylink: true
+    secoundaryurlname: "Secoundary link"
+    secoundaryurl: "https://github.com/gurusabarish/hugo-profile"
+    sourceurl: "https://github.com/gurusabarish/hugo-profile"
+  
+
 Author:
   name: "Gurusabarish"
   website: "https://github.com/gurusabarish"
