@@ -1,7 +1,7 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = "hugo-profile"
+baseURL: 'https://example.org/'
+languageCode: 'en-us'
+title: 'My New Hugo Site'
+theme: "hugo-profile"
 
 googleanalytics: UA-xxxxxxxx-x
 disqusShortname: yourdiscussshortname
