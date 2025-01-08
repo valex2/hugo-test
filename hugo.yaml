@@ -117,6 +117,7 @@ params:
     menus:
       disableAbout: false
       disableExperience: false
+      # disableresearchexperience: false
       disableEducation: false
       disableProjects: false
       disableAchievements: false
@@ -171,8 +172,6 @@ params:
       
       > "If we have learned one thing from the history of invention and discovery, it is that in the long run, and often in the short one, the most daring prophecies seem laughably conservative" -- **Arthur C. Clarke**
 
-      > "I am a victim of a series of accidents, as we are all" -- **Kurt Vonnegut**
-
       > "The purpose of human life, no matter who is controlling it, is to love whoever is around to be loved" -- **Kurt Vonnegut**
 
       > "I think we ought to read only the kind of books that wound or stab us. If the book we're reading doesn't wake us up with a blow to the head, what are we reading for? So that it will make us happy?... Good Lord, we would be happy precisely if we had no books..." -- **Franz Kafka**
@@ -181,25 +180,25 @@ params:
       - Cryopreservation ❄️
       - Biosignal Acquisition Hardware 🧠
       - Autonomous Underwater Vehicles 🌊
-      - China x US Biotech Policy 🏛️
+      - China x US Biotechnology Policy 🏛️
     
-    skills:
-      enable: true
-      title: "Here are a few things I've been working on recently:"
-      items:
-        - "Cryopreservation"
-        - "Biosignal Hardware"
-        - "Autonomous Underwater Vehicles"
-        - "China x US Biotech Policy"
+    # skills:
+    #   enable: true
+    #   title: "Here are a few things I've been working on recently:"
+    #   items:
+    #     - "Cryopreservation"
+    #     - "Biosignal Hardware"
+    #     - "Autonomous Underwater Vehicles"
+    #     - "China x US Biotech Policy"
 
   # Experience
   experience:
     enable: true
-    # title: "Custom Name"
+    title: "Work Experience"
     items:
       - job: "Hardware Engineer"
         company: "Cradle ❄️"
-        companyUrl: "cradle.xyz"
+        companyUrl: "https://cradle.xyz/"
         date: "June 2024 - present"
         featuredLink:
           enable: false
@@ -210,9 +209,9 @@ params:
           content: "full time during the summer, part-time during the school year"
         content: |
           I work on designing ultra-fast thermal systems for whole-organ cryopreservation.
-          - Simulating CPA diffusion and membrane transport phenomena 
+          - Magnetic nanoparticle synthesis and functionalization for nanowarming applications
           - Design and controls system engineering of custom controlled-rate freezers
-          - Magnetic nanoparticle development for nanowarming applications
+          - Simulating CPA diffusion and membrane transport phenomena 
 
       - job: "Platform Architecture Intern"
         company: "Apple 🍎"
@@ -246,22 +245,9 @@ params:
           - Time-series data analysis using Python, Numpy, Pandas, SciPy
           - Feature extraction from multi-channel EEG data
 
-      - job: "Research Assistant"
-        company: "Brain Interfacing Lab 🧠"
-        companyUrl: "https://bil.stanford.edu/"
-        date: "May 2023 - May 2024"
-        info:
-          enable: true
-          content: "full time during the summer, part-time during the school year"
-        featuredLink:
-          enable: true
-          name: "Project Writeup"
-          url: "https://drive.google.com/file/d/16ARbR6sbUUxR7A_-e7zyqSDiznXVo9ZV/view?usp=sharing"
-        content: |
-          My project involved the design and simulation of spiking neural networks (SNNs) that model cortical dynamics in order to understand the effects of neuronal lesioning on population-level activity and task performance.
-
       - job: "Teaching @ Stanford"
         company: "Stanford University 🏫"
+        companyUrl: "https://ee.stanford.edu/"
         date: "September 2023 - present"
         info:
           enable: true
@@ -275,6 +261,38 @@ params:
           I've also worked as a <b>resident assistant</b> at the following dorms:
           - Lagunita, Granada (2024-2025, freshman)
           - Wilbur, Arroyo (2023-2024, upperclass)
+
+  researchexperience:
+    enable: true
+    title: "Research Experience"
+    items:
+      - position: "Research Assistant"
+        company: "Brain Interfacing Lab 🧠"
+        companyUrl: "https://bil.stanford.edu/"
+        date: "May 2023 - May 2024"
+        info:
+          enable: true
+          content: "full time during the summer, part-time during the school year"
+        featuredLink:
+          enable: true
+          name: "Project Writeup"
+          url: "https://drive.google.com/file/d/16ARbR6sbUUxR7A_-e7zyqSDiznXVo9ZV/view?usp=sharing"
+        content: |
+          My project involved the design and simulation of spiking neural networks (SNNs) that model cortical dynamics in order to understand the effects of neuronal lesioning on population-level activity and task performance.
+      - position: "Research Assistant"
+        company: "Brain Interfacing Lab 🧠"
+        companyUrl: "https://bil.stanford.edu/"
+        date: "May 2023 - May 2024"
+        info:
+          enable: true
+          content: "full time during the summer, part-time during the school year"
+        featuredLink:
+          enable: true
+          name: "Project Writeup"
+          url: "https://drive.google.com/file/d/16ARbR6sbUUxR7A_-e7zyqSDiznXVo9ZV/view?usp=sharing"
+        content: |
+          My project involved the design and simulation of spiking neural networks (SNNs) that model cortical dynamics in order to understand the effects of neuronal lesioning on population-level activity and task performance.
+
           
   # Education
   education:
@@ -287,7 +305,7 @@ params:
           name: "Stanford University"
           url: "https://ee.stanford.edu/"
         date: "2021 - 2025"
-        GPA: "4.054 out of 4"
+        GPA: "4.027 out of 4"
         content: |-
           Extracurricular Activities
             - Electrical Subteam Lead for [Stanford's <u>Robosub AUV Team</u>](https://www.stanfordrobosub.org)
