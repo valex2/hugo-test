@@ -1,9 +1,20 @@
 module:
   mounts:
-    - source: "/Users/Vassilis/Documents/Obsidian Vault/PublicBlog"        # your Obsidian folder in the repo root
-      target: "content/blogs" # becomes the /blogs section
-    - source: "/Users/Vassilis/Documents/Obsidian Vault/PublicProjects"     # ← adjust if your projects live elsewhere
-      target: "content/projects"
+    # 1) Mount your repo's content normally so Hugo sees /content/projects, /content/anything
+    - source: content
+      target: content
+
+    # 2) Overlay your Obsidian blog into /content/blogs (this keeps working as before)
+    - source: "/Users/Vassilis/Documents/Obsidian Vault/PublicBlog"
+      target: "content/blogs"
+
+    # (optional but recommended so Hugo knows about your other folders explicitly)
+    - source: static
+      target: static
+    - source: layouts
+      target: layouts
+    - source: assets
+      target: assets
 
 baseURL: "https://example.com/"   # ← set your real production URL (with https://)
 languageCode: "en-us"
@@ -72,7 +83,7 @@ menu:
     - identifier: projects
       name: Projects
       title: My projects
-      url: /projects
+      url: /projects/
       weight: 4
 
 params:

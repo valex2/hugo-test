@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="container py-5">
+<article class="container py-5 page-with-sticky-header">
   <header class="mb-3">
     <h1 class="mb-1">{{ .Title }}</h1>
 
@@ -13,7 +13,6 @@
       {{- end -}}
     </div>
 
-    {{/* Project tag chips under the title */}}
     {{ $colors := slice "primary" "secondary" "success" "danger" "warning" "info" }}
     {{ with .Params.project_tags }}
       <div class="pt-2 d-flex flex-wrap gap-1">
@@ -28,15 +27,26 @@
 
     {{ with or .Params.cover .Params.featuredImage }}
       <figure class="mt-3">
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="img-fluid rounded">
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="img-fluid rounded hero-img">
       </figure>
+    {{ else }}
+      {{ with .Resources.GetMatch "cover*" }}
+        {{ $hero := .Fit "1200x675 webp q75" }}
+        <figure class="mt-3">
+          <img src="{{ $hero.RelPermalink }}" width="{{ $hero.Width }}" height="{{ $hero.Height }}" alt="{{ $.Title }}" class="img-fluid rounded hero-img">
+        </figure>
+      {{ end }}
     {{ end }}
   </header>
 
   <div class="content">
+    {{/* Callouts first (your existing partial) */}}
     {{ partial "obsidian-callouts.html" . }}
+    {{/* Then render content with Obsidian-style media embeds enabled */}}
+    {{ partial "obsidian-media.html" . }}
   </div>
 </article>
 
 <link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/layout-fixes.css">
 {{ end }}

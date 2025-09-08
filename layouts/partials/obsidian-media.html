@@ -1,0 +1,42 @@
+{{/* 
+  obsidian-media.html
+  - Converts Obsidian image embeds:  ![[file.ext]] or ![[file.ext|Alt text]]
+  - Looks for a page resource that matches the filename and emits a responsive <img>
+  - Leaves unknown embeds untouched, so they won't break rendering.
+*/}}
+
+{{- $p := . -}}
+{{- $raw := $p.RawContent -}}
+
+{{/* Regex: capture filename and optional alt after a |  */}}
+{{- $pattern := `!\[\[([^|\]]+)(?:\|([^\]]+))?\]\]` -}}
+
+{{- $out := $raw | replaceRE $pattern (printf "%%s") -}}
+
+{{/* We need to rebuild with replacements because Hugo replaceRE can't run per-match logic easily. */}}
+{{- $matches := findRE $pattern $raw -}}
+{{- $pieces := split $out "%s" -}}
+
+{{- $rendered := slice -}}
+{{- range $i, $piece := $pieces -}}
+  {{- $rendered = $rendered | append $piece -}}
+  {{- if lt $i (len $matches) -}}
+    {{- $m := index $matches $i -}}
+    {{- $fname := replaceRE $pattern "$1" $m -}}
+    {{- $alt := trim (replaceRE $pattern "$2" $m) " " -}}
+
+    {{- with $p.Resources.GetMatch $fname -}}
+      {{- $card := .Fit "1200x1200 webp q75" -}}
+      {{- $tag := printf `<img class="obsidian-embed hero-img" src="%s" width="%d" height="%d" alt="%s" loading="lazy" decoding="async">` $card.RelPermalink $card.Width $card.Height (cond (ne $alt "") $alt $p.Title) -}}
+      {{- $rendered = $rendered | append $tag -}}
+    {{- else -}}
+      {{/* Fallback: try static path (user may have written a path inside [[...]]). */}}
+      {{- $tag := printf `<img class="obsidian-embed hero-img" src="%s" alt="%s" loading="lazy" decoding="async">` (relURL $fname) (cond (ne $alt "") $alt $p.Title) -}}
+      {{- $rendered = $rendered | append $tag -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Render the transformed Markdown so normal MD + shortcodes still work */}}
+{{- $markdown := delimit $rendered "" -}}
+{{- $markdown | $p.RenderString -}}
