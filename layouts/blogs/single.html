@@ -2,9 +2,15 @@
 <article class="container py-5">
   <header class="mb-3">
     <h1 class="mb-1">{{ .Title }}</h1>
-    <div class="text-secondary">
+
+    <div class="text-secondary d-flex align-items-center gap-2">
       <small>{{ .Date.Format "Jan 2, 2006" }}</small>
-      {{ with .ReadingTime }}<span id="readingTime"> {{ $.Site.Params.singlePages.readTime.content }}</span>{{ end }}
+      {{- $rt := .ReadingTime -}}
+      {{- if gt $rt 0 -}}
+        <span class="text-secondary" title="{{ .WordCount }} words">
+          {{ $rt }} {{ $.Site.Params.singlePages.readTime.content }}
+        </span>
+      {{- end -}}
     </div>
 
     {{/* Tag chips under the title */}}
@@ -22,11 +28,9 @@
   </header>
 
   <div class="content">
-    {{ .Content }}
+    {{ partial "obsidian-callouts.html" . }}
   </div>
 </article>
 
-<!-- Load callout styling/conversion for Obsidian-style > [!NOTE] blocks -->
 <link rel="stylesheet" href="/css/callouts.css">
-<script src="/js/callouts.js" defer></script>
 {{ end }}

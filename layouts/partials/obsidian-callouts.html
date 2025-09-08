@@ -1,0 +1,86 @@
+{{- /* Obsidian callouts to HTML callouts (server-side) */ -}}
+{{- $raw := .RawContent -}}
+{{- $lines := split $raw "\n" -}}
+{{- $out := newScratch -}}
+{{- $.Scratch.Set "in" false -}}
+{{- $.Scratch.Set "mode" "" -}}
+{{- $emojiMap := dict
+    "note" "📝" "info" "ℹ️" "tip" "💡" "idea" "💡"
+    "warning" "⚠️" "caution" "⚠️" "important" "⚠️"
+    "success" "✅" "error" "⛔" "bug" "🐞" "quote" "❝"
+-}}
+
+{{- range $i, $line := $lines -}}
+  {{- $in := $.Scratch.Get "in" -}}
+  {{- $trimmed := replaceRE `^\s+|\s+$` "" $line -}} {{/* trim both ends */}}
+
+  {{- if not $in -}}
+    {{- /* --- Start: BLOCKQUOTE form: > [!TYPE] Optional Title --- */ -}}
+    {{- if findRE `^>\s*$begin:math:display$\\!\\w+$end:math:display$` $line -}}
+      {{- $type := lower (replaceRE `^>\s*$begin:math:display$\\!(\\w+)$end:math:display$.*` "$1" $line) -}}
+      {{- $titleRaw := replaceRE `^>\s*$begin:math:display$\\!\\w+$end:math:display$\s*` "" $line -}}
+      {{- $title := replaceRE `^\s+|\s+$` "" $titleRaw -}}
+      {{- if eq $title "" -}}{{- $title = title $type -}}{{- end -}}
+      {{- $.Scratch.Set "in" true -}}
+      {{- $.Scratch.Set "mode" "bq" -}}
+      {{- $emoji := or (index $emojiMap $type) "📝" -}}
+      {{- $classes := printf "callout callout-%s" $type -}}
+      {{- $start := printf "<blockquote class=\"%s\"><div class=\"callout-title\"><span class=\"callout-emoji\">%s</span> %s</div><div class=\"callout-body\">\n" $classes $emoji $title -}}
+      {{- $out.Add "buf" $start -}}
+      {{- /* IMPORTANT: do NOT append same-line body (prevents duplicate title) */ -}}
+
+    {{- /* --- Start: PARAGRAPH form: [!TYPE] Optional Title --- */ -}}
+    {{- else if findRE `^\s*$begin:math:display$\\!\\w+$end:math:display$` $line -}}
+      {{- $type := lower (replaceRE `^\s*$begin:math:display$\\!(\\w+)$end:math:display$.*` "$1" $line) -}}
+      {{- $titleRaw := replaceRE `^\s*$begin:math:display$\\!\\w+$end:math:display$\s*` "" $line -}}
+      {{- $title := replaceRE `^\s+|\s+$` "" $titleRaw -}}
+      {{- if eq $title "" -}}{{- $title = title $type -}}{{- end -}}
+      {{- $.Scratch.Set "in" true -}}
+      {{- $.Scratch.Set "mode" "p" -}}
+      {{- $emoji := or (index $emojiMap $type) "📝" -}}
+      {{- $classes := printf "callout callout-%s" $type -}}
+      {{- $start := printf "<blockquote class=\"%s\"><div class=\"callout-title\"><span class=\"callout-emoji\">%s</span> %s</div><div class=\"callout-body\">\n" $classes $emoji $title -}}
+      {{- $out.Add "buf" $start -}}
+      {{- /* IMPORTANT: do NOT append same-line body (prevents duplicate title) */ -}}
+
+    {{- else -}}
+      {{- $out.Add "buf" (print $line "\n") -}}
+    {{- end -}}
+
+  {{- else -}} {{/* --- Inside a callout block --- */}}
+    {{- $mode := $.Scratch.Get "mode" -}}
+
+    {{- if eq $mode "bq" -}} {{/* Continue while lines still start with ">" */}}
+      {{- if hasPrefix $trimmed ">" -}}
+        {{- $body := replaceRE `^>\s*` "" $line -}}
+        {{- $out.Add "buf" (print $body "\n") -}}
+      {{- else -}}
+        {{- $out.Add "buf" "</div></blockquote>\n" -}}
+        {{- $.Scratch.Set "in" false -}}
+        {{- $.Scratch.Set "mode" "" -}}
+        {{- $out.Add "buf" (print $line "\n") -}}
+      {{- end -}}
+
+    {{- else -}} {{/* mode == "p": keep paragraphs until a breaker */}}
+      {{- $isBlank := eq (replaceRE `^\s+|\s+$` "" $line) "" -}}
+      {{- $startsNewCallout := findRE `^\s*$begin:math:display$\\!\\w+$end:math:display$` $line -}}
+      {{- $isHeading := hasPrefix $trimmed "#" -}}
+      {{- if or $isBlank $startsNewCallout $isHeading -}}
+        {{- $out.Add "buf" "</div></blockquote>\n" -}}
+        {{- $.Scratch.Set "in" false -}}
+        {{- $.Scratch.Set "mode" "" -}}
+        {{- $out.Add "buf" (print $line "\n") -}}
+      {{- else -}}
+        {{- $out.Add "buf" (print $line "\n") -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $.Scratch.Get "in" -}}
+  {{- $out.Add "buf" "</div></blockquote>\n" -}}
+  {{- $.Scratch.Set "in" false -}}
+{{- end -}}
+
+{{- $html := $out.Get "buf" | markdownify -}}
+{{- $html -}}
