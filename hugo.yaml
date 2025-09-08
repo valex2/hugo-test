@@ -1,29 +1,28 @@
-# /hugo.yaml
-baseURL: "/"
+baseURL: "https://example.com/"   # ← set your real production URL (with https://)
 languageCode: "en-us"
-title: "Vassili_Alexopoulos"
-theme: hugo-profile
+title: "Vassili Alexopoulos"
+theme: "hugo-profile"
 
+# What Hugo should build for each kind of page
 outputs:
-  home:
-    - "HTML"
-    - "RSS"
-    - "JSON"
-  page:
-    - "HTML"
-    - "RSS"
+  home: ["HTML", "RSS", "JSON"]   # JSON enables /index.json for client-side search
+  page: ["HTML", "RSS"]
 
-Paginate: 3
+paginate: 9                       # lowercase per Hugo; tweak page size as you like
 enableRobotsTXT: true
-# disqusShortname: your-disqus-shortname
-# googleAnalytics: G-MEASUREMENT_ID
 
+# Optional services
+# disqusShortname: your-disqus-shortname
+# googleAnalytics: G-XXXXXXXXXX
+
+# Safer markdown rendering (theme uses HTML in content)
 markup:
   goldmark:
     renderer:
       unsafe: true
 
-Menus:
+# Main nav (Hugo expects lowercase 'menu')
+menu:
   main:
     - identifier: blog
       name: Blog
@@ -32,61 +31,46 @@ Menus:
       weight: 1
     - identifier: gallery
       name: Gallery
-      title: Blog posts
+      title: Project/media gallery
       url: /gallery
       weight: 2
-    # Dropdown menu
+    # Dropdown example
     - identifier: dropdown
-      title: Example dropdown menu
       name: Dropdown
+      title: Example dropdown menu
       weight: 3
     - identifier: dropdown1
-      title: example dropdown 1
       name: example 1
+      title: example dropdown 1
       url: /#
       parent: dropdown
       weight: 1
     - identifier: dropdown2
-      title: example dropdown 2
       name: example 2
+      title: example dropdown 2
       url: /#
       parent: dropdown
       weight: 2
 
 params:
   title: "Vassili Alexopoulos"
-  description: Text about my cool site
-  # staticPath: ""  # The path to serve the static files from
+  description: "Text about my cool site"
   # favicon: "/fav.png"
-
-  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
-  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
-  # Note the lack of "" in true, it should be of boolean type.
   useBootstrapCDN: false
 
-  # If you want to load dynamically responsive images from Cloudinary
-  # This requires your images to be uploaded + hosted on Cloudinary
-  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
-  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
-
-  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
   mathjax: false
-
-  # Whether the fade animations on the home page will be enabled
   animate: true
 
   theme:
     disableThemeToggle: true
-    defaultTheme: "light" # dark
+    defaultTheme: "light"
 
   font:
-    fontSize: 1rem # default: 1rem
-    fontWeight: 800 # default: 400
-    lineHeight: 1.5 # default: 1.5
-    textAlign: left # default: left
+    fontSize: 1rem
+    fontWeight: 800
+    lineHeight: 1.5
+    textAlign: left
 
-  # color preference
-  # When using hex codes for colors, quotations must be used along with the # sign
   color:
     textColor: "#343a40"
     secondaryTextColor: "#6c757d"
@@ -94,7 +78,6 @@ params:
     secondaryBackgroundColor: "#64ffda1a"
     primaryColor: "#007bff"
     secondaryColor: "#f8f9fa"
-
     darkmode:
       textColor: "#e4e6eb"
       secondaryTextColor: "#b0b3b8"
@@ -103,22 +86,20 @@ params:
       primaryColor: "#ffffff"
       secondaryColor: "#212529"
 
-  # If you want to customize the menu, you can change it here
   navbar:
-    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
-    brandLogo: "/images/moray!.jpeg" # Logo for the brand | default is the favicon variable
-    showBrandLogo: true # Show brand logo in nav bar | default is true
-    brandName: "Vassili Alexopoulos" # Brand name for the brand | default is the title variable
-    disableSearch: true
+    align: ms-auto
+    brandLogo: "/images/moray!.jpeg"
+    showBrandLogo: true
+    brandName: "Vassili Alexopoulos"
+    disableSearch: false            # ← enable search box to pair with /index.json
     searchPlaceholder: "Search"
     stickyNavBar:
-      enable : true
-      showOnScrollUp : true
+      enable: true
+      showOnScrollUp: true
     enableSeparator: false
     menus:
       disableAbout: false
       disableExperience: false
-      # disableresearchexperience: false
       disableEducation: false
       disableProjects: false
       disableAchievements: false
@@ -131,15 +112,13 @@ params:
     title: "Vassili"
     subtitle: "I'm a curious engineer that loves biology."
     content: "Straddling science and engineering, I believe that the world around us is intrinsically numinous -- tinkering with it is like playing with magic."
-    # "Leveraging my interdisciplinary background, I enjoy innovating within these two fields to build technologies that improve lives at scale."
-    image: /images/rocket_squat.jpeg
+    image: "/images/rocket_squat.jpeg"
     bottomImage:
       enable: false
-    # roundImage: true # Make hero image circular | default false
     button:
       enable: true
       name: "Resume"
-      url: "https://docs.google.com/document/d/1Wb4iwoKbPKPZ_3Y0PBOnVd_Hr43setWL/edit?usp=sharing&ouid=108875645595482692795&rtpof=true&sd=true" #TODO
+      url: "https://docs.google.com/document/d/1Wb4iwoKbPKPZ_3Y0PBOnVd_Hr43setWL/edit?usp=sharing&ouid=108875645595482692795&rtpof=true&sd=true"
       download: true
       newPage: false
     socialLinks:
@@ -148,49 +127,20 @@ params:
           url: https://www.linkedin.com/in/valexopa/
         - icon: fab fa-github
           url: https://github.com/valex2
-        # - icon: fab fa-x-twitter
-        #   url: https://example.com
 
   # About
   about:
     enable: true
-    # title: "About Me"
     image: "/images/ski_point.jpeg"
     content: |-
       ##### <span style="color: dodgerblue;"> About me </span>
       I'm a rising senior at Stanford University, majoring in Electrical Engineering and minoring in Biology. 
-
-      I believe that the future of humanity is sweetly nestled in the intersection of these two fields; 
-      hardware innovation will enable at-scale distribution of advances in BCIs, health sensing/treatments, 
-      and biomanufacturing -- technologies that will improve lives at a scale of n >> 1,000,000. 
-
-      I'm particularly interested in developing systems that leverage progress across EE and Biology. I'm also interested in developing coherent technology policy that leaves room for R&D, public buy-in, and accessibility for all.
-    
-      In my free time, I love spearfishing, playing spikeball, and thinking about things that make me feel small: the brain, the ocean, and the stars. 
-      
-      ##### <span style="color: dodgerblue;"> Favorite quotes </span>
-      > "The brain is the organ of destiny. It holds within its humming mechanism secrets that will determine the future of the human race" -- **Wilder Penfield**
-      
-      > "If we have learned one thing from the history of invention and discovery, it is that in the long run, and often in the short one, the most daring prophecies seem laughably conservative" -- **Arthur C. Clarke**
-
-      > "The purpose of human life, no matter who is controlling it, is to love whoever is around to be loved" -- **Kurt Vonnegut**
-
-      > "I think we ought to read only the kind of books that wound or stab us. If the book we're reading doesn't wake us up with a blow to the head, what are we reading for? So that it will make us happy?... Good Lord, we would be happy precisely if we had no books..." -- **Franz Kafka**
-
+      ...
       ##### <span style="color: dodgerblue;"> Things I've been working on recently </span>
       - Cryopreservation ❄️
       - Biosignal Acquisition Hardware 🧠
       - Autonomous Underwater Vehicles 🌊
       - China x US Biotechnology Policy 🏛️
-    
-    # skills:
-    #   enable: true
-    #   title: "Here are a few things I've been working on recently:"
-    #   items:
-    #     - "Cryopreservation"
-    #     - "Biosignal Hardware"
-    #     - "Autonomous Underwater Vehicles"
-    #     - "China x US Biotech Policy"
 
   # Experience
   experience:
@@ -201,10 +151,6 @@ params:
         company: "Cradle ❄️"
         companyUrl: "https://cradle.xyz/"
         date: "June 2024 - present"
-        featuredLink:
-          enable: false
-          name: "View the project"
-          url: "https://example.com"
         info:
           enable: true
           content: "full time during the summer, part-time during the school year"
@@ -213,14 +159,10 @@ params:
           - Magnetic nanoparticle synthesis and functionalization for nanowarming applications
           - Design and controls system engineering of custom controlled-rate freezers
           - Simulating CPA diffusion and membrane transport phenomena 
-
       - job: "Platform Architecture Intern"
         company: "Apple 🍎"
         companyUrl: "https://www.apple.com/"
         date: "Mar 2024 - Jun 2024"
-        featuredLink:
-          enable: false
-          url: "https://example.com"
         info:
           enable: true
           content: "12 week internship"
@@ -230,7 +172,6 @@ params:
           - Analog signal chain optimization
           - Time-series biosignal analysis
           - Experimental data collection
-
       - job: "Software Engineering Intern"
         company: "Zeit Medical ⚕︎"
         companyUrl: "https://www.zeitmedical.com/"
@@ -238,14 +179,10 @@ params:
         info:
           enable: true
           content: "part-time internship"
-        featuredLink:
-          enable: false
-          url: "https://example.com"
         content: |
           I developed a semi-automated framework to differentiate between high and low-quality EEG headband recordings via hand-labeling and model-assisted noise detection.
           - Time-series data analysis using Python, Numpy, Pandas, SciPy
           - Feature extraction from multi-channel EEG data
-
       - job: "Teaching @ Stanford"
         company: "Stanford University 🏫"
         companyUrl: "https://ee.stanford.edu/"
@@ -263,6 +200,7 @@ params:
           - Lagunita, Granada (2024-2025, freshman)
           - Wilbur, Arroyo (2023-2024, upperclass)
 
+  # Research Experience (kept as used by your theme)
   researchexperience:
     enable: true
     title: "Research Experience"
@@ -279,26 +217,11 @@ params:
           name: "Project Writeup"
           url: "https://drive.google.com/file/d/16ARbR6sbUUxR7A_-e7zyqSDiznXVo9ZV/view?usp=sharing"
         content: |
-          My project involved the design and simulation of spiking neural networks (SNNs) that model cortical dynamics in order to understand the effects of neuronal lesioning on population-level activity and task performance.
-      - position: "Research Assistant"
-        company: "Brain Interfacing Lab 🧠"
-        companyUrl: "https://bil.stanford.edu/"
-        date: "May 2023 - May 2024"
-        info:
-          enable: true
-          content: "full time during the summer, part-time during the school year"
-        featuredLink:
-          enable: true
-          name: "Project Writeup"
-          url: "https://drive.google.com/file/d/16ARbR6sbUUxR7A_-e7zyqSDiznXVo9ZV/view?usp=sharing"
-        content: |
-          My project involved the design and simulation of spiking neural networks (SNNs) that model cortical dynamics in order to understand the effects of neuronal lesioning on population-level activity and task performance.
+          My project involved the design and simulation of spiking neural networks (SNNs) ...
 
-          
   # Education
   education:
     enable: true
-    # title: "Custom Name"
     index: false
     items:
       - title: "Bachelor of Science in Electrical Engineering, Minor in Biology"
@@ -310,175 +233,112 @@ params:
         content: |-
           Extracurricular Activities
             - Electrical Subteam Lead for [Stanford's <u>Robosub AUV Team</u>](https://www.stanfordrobosub.org)
-            - Project Lead and Financial Officer for [Stanford's <u>Biological Interdisciplinary Open Make Environment</u> (BIOME)](https://stanfordbiome.org/)
-            - Founding member and VP of Industry for [Stanford's <u>NeuroTech Club</u>](https://www.linkedin.com/company/stanford-neurotech/?viewAsMember=true) 
-            - Ex co-lead of [Stanford Student Space Initiative's <u>Astro-Biology Team</u>](https://www.stanfordssi.org/)
-            - Staffer at [<u>The Bridge Peer Counseling Center</u>](https://web.stanford.edu/group/bridge/)
-        # featuredLink:
-        #   enable: true
-        #   name: "My academic record"
-        #   url: "https://example.com"
+            - Project Lead and Financial Officer for [Stanford's <u>BIOME</u>](https://stanfordbiome.org/)
+            - Founding member and VP of Industry for [Stanford's <u>NeuroTech Club</u>](...)
+            - Ex co-lead of [SSI <u>Astro-Biology Team</u>](...)
+            - Staffer at [<u>The Bridge Peer Counseling Center</u>](...)
       - title: "High School"
         school:
           name: "Saint Ignatius High School"
           url: "https://www.ignatius.edu/"
         date: "2017 - 2021"
+        GPA: "4.52 out of 4.0"
         content: |-
           Extracurricular Activities
           - Varsity Policy Debater and Team Co-Captain
           - Peer Tutor at the Welsh Academy
           - National Honor Society
-        GPA: "4.52 out of 4.0"
-        # featuredLink:
-        #   enable: true
-        #   url: "https://example.com"
 
   # Achievements
   achievements:
     enable: true
-    # title: "Custom Name"
     items:
       - title: Stanford Existential Risks Initiative (SERI) Summer Fellow
-        content: I was selected as a SERI Summer Fellow for the 2024 cohort. SERI is a research group at Stanford that focuses on the study of existential risks. My focus is on U.S.-China cooperation on emerging biotechnology.
+        content: I was selected as a SERI Summer Fellow for the 2024 cohort...
         url: https://seri.stanford.edu/
         image: /images/Seri.jpeg
       - title: PanHellenic Scholarship Awardee
-        content: The PanHellenic Scholarship Foundation honors outstanding Greek-American students of high scholastic achievement. Received summer 2024.
+        content: The PanHellenic Scholarship Foundation honors outstanding Greek-American students...
         url: https://www.panhellenicsf.org
         image: /images/panehellenic.png
       - title: Boothe Prize Nominee
-        content: |- 
-          The Boothe Prize recognizes and rewards outstanding expository and argumentative writing by students in their first-year writing class. I received a nomination for the award for my research paper Rare Earth Elements and Environmental Policy: Mistakes on the Path to a Sustainable Future
+        content: |-
+          The Boothe Prize recognizes ...
         url: https://drive.google.com/file/d/1QY330V8q5OK4xwgBxTUfeKGwkoJJxRTf/view
         image: /images/stanford.png
-      # - title: "National Merit Finalist"
-      #   content: "Awarded to students who score in the top 1% of the PSAT/NMSQT in their state."
-      #   url: https://www.nationalmerit.org
-      #   image: /images/national_merit.jpg
       - title: State Champion in Policy Debate
-        content: Under the mentorship, guidance, and support of Sean Lavelle, Joseph Buzzelli, and the rest our policy debate team, my partner, Sam Navracruz, and I finished first at the 2021 OSDA State Tournament with a 5-1 record in prelims and a 4-0 record in the bracket rounds.
+        content: Under the mentorship...
         url: https://sites.google.com/view/theosda/results/2020-2021
         image: /images/OSDA.jpg
       - title: Tournament of Champions Qualifier
-        content: Qualified for the 2021 TOC, one of the most prestigious high school debate tournaments in the country. This was based on my performance debating on the national policy debate circuit.
+        content: Qualified for the 2021 TOC...
         url: https://en.wikipedia.org/wiki/Tournament_of_Champions_(debate)
         image: /images/TOC.png
-      # - title: National Speech and Debate Tournament Qualifier
-      #   content: I was an alternate for the 2019 tournament and a qualifier for the 2021 tournament.
-      #   url: https://www.speechanddebate.org/nationals-/?wtime=%7Bseek_to_second_number%7D
-      #   image: /images/NSDT.png
       - title: Fr. James W. Kirby, S.J. Science Award
-        content: Presented by the Saint Ignatius High School Science Department for excellence in science inside and outside of the classroom.
+        content: Presented by the Saint Ignatius High School Science Department...
         image: /images/ignatius.png
       - title: Fr. Larry Belt S.J. Tutoring Award
-        content: Given in honor of Fr. Larry Belt S.J. who as a math teacher at Saint Ignatius High School devoted his time to working with students who needed extra help in the learning of mathematics. Fr. Belt spent much of his time before and after school working with students individually. This award is presented to a senior who has selflessly given his time to tutor his peers in mathematics.
+        content: Given in honor of Fr. Larry Belt S.J....
         image: /images/ignatius.png
-      # - title: Degree of Special Distinction
-      #   content: Issued by the the National Forensic League, Feb 2021, for upholding the highest standards of integrity, humility, respect, leadership, and service in the pursuit of excellence as a member of the National Speech and Debate Association at Saint Ignatius High School.
-      #   # image: /images/special_distinction.jpg
-      # - title: AP Capstone Diploma, AP Scholar with Distinction
-      #   content: Receieved June 2020, for demonstrating outstanding college-level achievement in AP Seminar and AP Research, as well as showing mastery of AP Exams taken (an average score of at least 3.5 on all exams).
 
-  # projects
+  # Projects
   projects:
     enable: true
-    # title: "Custom Name"
     items:
       - title: Raspberry Pi Computer System
         content: |-
-          Built a working computer system on a RPi from the ground up: starting in assembly and working from bare-metal. With no operating system safety net and extremely minimal use of libraries, I implemented the following in C: GPIO interface, memory allocator, string formatting and graphics libraries, shell, PS2 keyboard and mouse drivers.
+          Built a working computer system on a RPi from the ground up...
         image: /images/projects/display.jpeg
-        badges:
-          - "Software"
-          - "Engineering"
-        # featured:
-        #   name: Demo
-        #   link:
-
+        badges: ["Software", "Engineering"]
       - title: Data-Driven Analysis of Glioblastoma Treatment Patterns
-        content: Analyzed unstructured medical records from patients with glioblastoma diagnoses to evaluate relevant, medication-based treatment patterns. Created novel line of therapy rules for regimen tracking and used time-to-next treatment estimators to determine which clinical approaches yield the most positive outcomes.
+        content: Analyzed unstructured medical records...
         image: /images/projects/gbm2.jpeg
         featured:
           name: Publication
           link: https://ascopubs.org/doi/10.1200/CCI.23.00091
-        badges:
-          - "Health"
-          - "Research"
-        # links:
-        #   - icon: fa fa-envelope
-        #     url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
-        #   - icon: fab fa-github
-        #     url: https://github.com/gurusabarish/hugo-profile
-        #   - icon: fab fa-twitter
-        #     url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
-      
+        badges: ["Health", "Research"]
       - title: Space Biology @ Stanford
-        content: Helped revive the space biology community @ Stanford by hosting speakers from across the bay area and by organizing Stanford's first ever Space Biology Symposium! Check out the website we made below.
+        content: Helped revive the space biology community...
         image: /images/projects/symposium.jpg
         featured:
           name: Website (with speaker recordings!)
           link: https://spacebiology.squarespace.com/
-        badges:
-          - "Space"
-        # links:
-        #   - icon: fab fa-github
-        #     url: https://github.com/gurusabarish/converter
-
+        badges: ["Space"]
       - title: Population Activity in Balanced Spiking Neural Networks after Neuron Loss
         content: |-
-          I designed, developed, and tested an SNN that simulates ischemic attacks within large, biologically-plausible populations of excitatory and inhibitory neurons.
-          By exposing these networks to tasks of various complexities, and sweeping neuroscience-inspired hyperparameters, I discovered that a family of similar coactivity matrices enables latent dynamics capable of leading to the same behavioral output. The size and spread of this family is constrained by the E/I balance of the network, 
-          and suggests that robustness to ablation could stem from the existence of multiple solution spaces in a continuous activity manifold.
+          I designed, developed, and tested an SNN...
         image: /images/projects/state_space_rot_2.png
-        badges:
-          - "Neuroscience"
-          - "Research"
-          - "Engineering"
+        badges: ["Neuroscience", "Research", "Engineering"]
         links:
           - icon: fab fa-github
             url: https://github.com/valex2/ablation_sims
           - icon: fab fa-google-drive
-            url: https://github.com/valex2/ablation_sims/blob/main/Poster/Analysis%20of%20Population%20Activity%20in%20Balanced%20Spiking%20Neural%20Networks%20after%20Neuron%20Loss.pdf
+            url: https://github.com/valex2/ablation_sims/blob/main/Poster/Analysis%20...pdf
         featured:
           name: Project Writeup
-          url: https://github.com/valex2/ablation_sims/blob/main/Writeup/Robustness%20of%20Balanced%20Networks%2C%20Before%20and%20After%20Neuron%20Loss.pdf
-
-
+          url: https://github.com/valex2/ablation_sims/blob/main/Writeup/Robustness%20...pdf
       - title: CaffE.Coli
         content: |-
-          Engineered E. coli to produce caffeine. Design and testing of a novel biosynthetic pathway for the production of caffeine in E.coli. Custom-built a plasmid that co-opted endogenous guanine metabolism, tranformed it into E. coli, and tested for caffeine production.
+          Engineered E. coli to produce caffeine...
         image: /images/projects/caffecoli.png
-        badges:
-          - "Biology"
-          - "Engineering"
-
-      - title: 🇬🇷 -> 🚀
-        content: I built an L1 high-power rocket. It was launched with an H550-14A motor and reached an apogee of 950m.
+        badges: ["Biology", "Engineering"]
+      - title: "🇬🇷 -> 🚀"
+        content: I built an L1 high-power rocket...
         image: /images/projects/rocket.jpg
-        # featured:
-        #   name: Demo V2
-        #   link: https://hugo-profile-2.netlify.app
-        badges:
-          - "Space"
-          - "Engineering"
-        # links:
-        #   - icon: fab fa-github
-        #     url: https://github.com/gurusabarish/HugoProfileV2
+        badges: ["Space", "Engineering"]
 
-      
-
-  #Contact
+  # Contact
   contact:
     enable: true
-    # title: "Custom Name"
     content: |-
       Please reach out, I'd love to get to know you better!
-      > If we have learned one thing from the history of invention and discovery, it is that in the long run, and often in the short one, the most daring prophecies seem laughably conservative. -- Arthur C. Clarke
+      > If we have learned one thing...
     btnName: email
-    btnLink: mailto:valex@stanford.edu
+    btnLink: "mailto:valex@stanford.edu"
+    # To switch to a form later, enable Formspree:
     # formspree:
-    #   enable: true # `contact.email` value will be ignored
-    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+    #   enable: true
+    #   formId: abcdefgh
     #   emailCaption: "Enter your email address"
     #   messageCaption: "Enter your message here"
     #   messageRows: 5
@@ -493,15 +353,10 @@ params:
     socialNetworks:
       github: https://github.com/valex2
       linkedin: https://www.linkedin.com/in/valexopa/
-      # twitter: https://twitter.com
-      # instagram: https://instagram.com
-      # facebook: https://facebook.com
 
-  # List pages like blogs and posts
   listPages:
     disableFeaturedImage: false
 
-  # Single pages like blog and post
   singlePages:
     socialShare: true
     readTime:
@@ -512,7 +367,6 @@ params:
     tags:
       openInNewTab: true
 
-  # For translations
   terms:
     read: "Read"
     toc: "Table Of Contents"
@@ -525,5 +379,6 @@ params:
     articleList: "Jan 2, 2006"
     articleRecent: "Jan 2, 2006"
 
-  #customScripts: -| # You can add custom scripts which will be added before </body> tag
-  #  <script type="text/javascript"><!-- any script here --></script>
+# params.customScripts: |-
+#   <script src="/js/search.js" defer></script>
+#   <script src="/js/contact.js" defer></script>

@@ -31,8 +31,8 @@
   
 
 
-<meta property="og:url" content="//localhost:8888/categories/">
-  <meta property="og:site_name" content="Vassili_Alexopoulos">
+<meta property="og:url" content="http://localhost:8888/categories/">
+  <meta property="og:site_name" content="Vassili Alexopoulos">
   <meta property="og:title" content="Categories">
   <meta property="og:description" content="Text about my cool site">
   <meta property="og:locale" content="en_us">
@@ -103,7 +103,7 @@
 
 
 
-<meta name="description" content="Categories of Vassili_Alexopoulos">
+<meta name="description" content="Categories of Vassili Alexopoulos">
 <link rel="stylesheet" href="/css/list.css" media="all">
 
 
@@ -111,7 +111,7 @@
   
 
   <title>
-Categories | Vassili_Alexopoulos
+Categories | Vassili Alexopoulos
 
   </title>
 </head>
@@ -170,7 +170,7 @@ Categories | Vassili_Alexopoulos
     <nav class="pt-3 navbar navbar-expand-lg animate">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             
-            <a class="navbar-brand primary-font text-wrap" href="//localhost:8888/">
+            <a class="navbar-brand primary-font text-wrap" href="/">
                 
                 <img src="/images/moray!.jpeg" width="30" height="30"
                     class="d-inline-block align-top">
@@ -178,6 +178,11 @@ Categories | Vassili_Alexopoulos
                 
             </a>
 
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Search'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
             
 
             
@@ -192,10 +197,16 @@ Categories | Vassili_Alexopoulos
             <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
                 <ul class="navbar-nav ms-auto text-center">
                     
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Search' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="//localhost:8888/#about" aria-label="about">
+                        <a class="nav-link" href="/#about" aria-label="about">
                             About
                         </a>
                     </li>
@@ -203,7 +214,7 @@ Categories | Vassili_Alexopoulos
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="//localhost:8888/#experience"
+                        <a class="nav-link" href="/#experience"
                             aria-label="experience">
                             Work Experience
                         </a>
@@ -212,7 +223,7 @@ Categories | Vassili_Alexopoulos
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="//localhost:8888/#researchexperience"
+                        <a class="nav-link" href="/#researchexperience"
                             aria-label="researchexperience">
                             Research Experience
                         </a>
@@ -221,7 +232,7 @@ Categories | Vassili_Alexopoulos
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="//localhost:8888/#education"
+                        <a class="nav-link" href="/#education"
                             aria-label="education">
                             Education
                         </a>
@@ -230,7 +241,7 @@ Categories | Vassili_Alexopoulos
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="//localhost:8888/#projects"
+                        <a class="nav-link" href="/#projects"
                             aria-label="projects">
                             Projects
                         </a>
@@ -239,7 +250,7 @@ Categories | Vassili_Alexopoulos
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="//localhost:8888/#achievements"
+                        <a class="nav-link" href="/#achievements"
                             aria-label="achievements">
                             Achievements
                         </a>
@@ -248,7 +259,7 @@ Categories | Vassili_Alexopoulos
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="//localhost:8888/#contact"
+                        <a class="nav-link" href="/#contact"
                             aria-label="contact">
                             Contact
                         </a>
@@ -272,7 +283,7 @@ Categories | Vassili_Alexopoulos
                     
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/gallery" title="Blog posts">
+                        <a class="nav-link" href="/gallery" title="Project/media gallery">
                             
                             Gallery
                         </a>
@@ -380,7 +391,7 @@ Categories | Vassili_Alexopoulos
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="//localhost:8888/" title="Vassili_Alexopoulos">
+                    <a href="http://localhost:8888/" title="Vassili Alexopoulos">
                         <img alt="Footer logo" src="/images/moray!.jpeg"
                             height="40px" width="40px">
                     </a>
@@ -411,6 +422,8 @@ Categories | Vassili_Alexopoulos
 
 
 
+
+    <script src="/js/search.js"></script>
 
 
 
