@@ -23,3 +23,10 @@ html { scroll-padding-top: var(--header-h); }  /* anchors won't hide under heade
   margin: 1rem auto;
   border-radius: .5rem;
 }
+
+.natural-ratio {
+  width: 100%;
+  height: auto;   /* scale naturally */
+  display: block;
+  object-fit: contain;  /* no crop */
+}

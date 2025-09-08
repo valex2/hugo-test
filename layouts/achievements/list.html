@@ -1,0 +1,72 @@
+{{ define "main" }}
+<section class="py-5">
+  <div class="container">
+    <h3 class="text-center">{{ .Title }}</h3>
+    {{ with .Content }}<div class="text-center mb-4">{{ . }}</div>{{ end }}
+
+    {{/* Collect pages: regular, non-drafts, not unlisted */}}
+    {{ $pages := .RegularPages }}
+    {{ $pages = where $pages "Draft" "ne" true }}
+    {{ $pages = where $pages ".Params.unlisted" "ne" true }}
+    {{ $pages = $pages.ByDate.Reverse }}
+
+    {{/* Durable paginate size with safe fallback */}}
+    {{ $size := 12 }}
+    {{ with site.Params.projects }}
+      {{ with .listPaginate }}
+        {{ $cand := int . }}
+        {{ if gt $cand 0 }}
+          {{ $size = $cand }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ $p := .Paginate $pages $size }}
+
+    <div class="row justify-content-center px-3 px-md-5">
+      {{ range $p.Pages }}
+        {{/* Compute link target: prefer .Params.external / externalLink / url if absolute http(s); else use .RelPermalink */}}
+        {{ $ext := or .Params.external (or .Params.externalLink .Params.url) }}
+        {{ $href := .RelPermalink }}
+        {{ if and $ext (strings.HasPrefix (printf "%v" $ext) "http") }}
+          {{ $href = $ext }}
+        {{ end }}
+
+        <div class="col-lg-4 col-md-6 my-3">
+          <div class="card h-100">
+            {{ with .Params.cover }}
+              {{/* Render cover without processing. Support http(s) and site-relative paths. */}}
+              {{ $src := . }}
+              {{ if strings.HasPrefix $src "http" }}
+                {{/* leave as-is */}}
+              {{ else }}
+                {{/* ensure site-relative URL */}}
+                {{ $src = relURL $src }}
+              {{ end }}
+              <a href="{{ $href }}" {{ if strings.HasPrefix $href "http" }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                <img class="card-img-top natural-ratio" src="{{ $src | safeURL }}" alt="{{ $.Title }}">
+              </a>
+            {{ end }}
+
+            <div class="card-body p-3">
+              <h5 class="card-title mt-1">
+                <a href="{{ $href }}" {{ if strings.HasPrefix $href "http" }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                  {{ .Title }}
+                </a>
+              </h5>
+              <div class="text-secondary"><small>{{ .Date.Format "Jan 2006" }}</small></div>
+              {{ with or .Params.summary .Summary }}
+                <p class="card-text mt-2">{{ . }}</p>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</section>
+
+<link rel="stylesheet" href="/css/layout-fixes.css">
+{{ end }}

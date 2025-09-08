@@ -8,6 +8,10 @@ module:
     - source: "/Users/Vassilis/Documents/Obsidian Vault/PublicBlog"
       target: "content/blogs"
 
+    # 3) Mount achievements if you want to use that section (optional)
+    - source: "/Users/Vassilis/Documents/Obsidian Vault/Achievements"
+      target: "content/achievements"
+
     # (optional but recommended so Hugo knows about your other folders explicitly)
     - source: static
       target: static
@@ -31,6 +35,7 @@ outputs:
 permalinks:
   blogs: "/blogs/:slug/"
   projects: "/projects/:slug/"
+  achievements: "/achievements/:slug/"
 
 paginate: 9                       # lowercase per Hugo; tweak page size as you like
 enableRobotsTXT: true
@@ -59,32 +64,37 @@ menu:
       title: Blog posts
       url: /blogs
       weight: 1
-    - identifier: gallery
-      name: Gallery
-      title: Project/media gallery
-      url: /gallery
-      weight: 2
-    - identifier: dropdown
-      name: Dropdown
-      title: Example dropdown menu
-      weight: 3
-    - identifier: dropdown1
-      name: example 1
-      title: example dropdown 1
-      url: /#
-      parent: dropdown
-      weight: 1
-    - identifier: dropdown2
-      name: example 2
-      title: example dropdown 2
-      url: /#
-      parent: dropdown
-      weight: 2
+    # - identifier: gallery
+    #   name: Gallery
+    #   title: Project/media gallery
+    #   url: /gallery
+    #   weight: 2
+    # - identifier: dropdown
+    #   name: Dropdown
+    #   title: Example dropdown menu
+    #   weight: 3
+    # - identifier: dropdown1
+    #   name: example 1
+    #   title: example dropdown 1
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 1
+    # - identifier: dropdown2
+    #   name: example 2
+    #   title: example dropdown 2
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 2
     - identifier: projects
       name: Projects
       title: My projects
       url: /projects/
       weight: 4
+    - identifier: achievements
+      name: Achievements
+      url: /achievements/
+      weight: 5
+
 
 params:
   title: "Vassili Alexopoulos"
@@ -143,7 +153,7 @@ params:
       disableEducation: false
       disableProjects: false
       disableAchievements: false
-      disableContact: false
+      disableContact: true
 
   # Hero
   hero:
@@ -314,67 +324,17 @@ params:
 
   # Achievements
   achievements:
-    enable: true
-    # title: "Custom Name"
-    items:
-      - title: Stanford Existential Risks Initiative (SERI) Summer Fellow
-        content: I was selected as a SERI Summer Fellow for the 2024 cohort. SERI is a research group at Stanford that focuses on the study of existential risks. My focus is on U.S.-China cooperation on emerging biotechnology.
-        url: https://seri.stanford.edu/
-        image: /images/Seri.jpeg
-      - title: PanHellenic Scholarship Awardee
-        content: The PanHellenic Scholarship Foundation honors outstanding Greek-American students of high scholastic achievement. Received summer 2024.
-        url: https://www.panhellenicsf.org
-        image: /images/panehellenic.png
-      - title: Boothe Prize Nominee
-        content: |- 
-          The Boothe Prize recognizes and rewards outstanding expository and argumentative writing by students in their first-year writing class. I received a nomination for the award for my research paper Rare Earth Elements and Environmental Policy: Mistakes on the Path to a Sustainable Future
-        url: https://drive.google.com/file/d/1QY330V8q5OK4xwgBxTUfeKGwkoJJxRTf/view
-        image: /images/stanford.png
-      # - title: "National Merit Finalist"
-      #   content: "Awarded to students who score in the top 1% of the PSAT/NMSQT in their state."
-      #   url: https://www.nationalmerit.org
-      #   image: /images/national_merit.jpg
-      - title: State Champion in Policy Debate
-        content: Under the mentorship, guidance, and support of Sean Lavelle, Joseph Buzzelli, and the rest our policy debate team, my partner, Sam Navracruz, and I finished first at the 2021 OSDA State Tournament with a 5-1 record in prelims and a 4-0 record in the bracket rounds.
-        url: https://sites.google.com/view/theosda/results/2020-2021
-        image: /images/OSDA.jpg
-      - title: Tournament of Champions Qualifier
-        content: Qualified for the 2021 TOC, one of the most prestigious high school debate tournaments in the country. This was based on my performance debating on the national policy debate circuit.
-        url: https://en.wikipedia.org/wiki/Tournament_of_Champions_(debate)
-        image: /images/TOC.png
-      # - title: National Speech and Debate Tournament Qualifier
-      #   content: I was an alternate for the 2019 tournament and a qualifier for the 2021 tournament.
-      #   url: https://www.speechanddebate.org/nationals-/?wtime=%7Bseek_to_second_number%7D
-      #   image: /images/NSDT.png
-      - title: Fr. James W. Kirby, S.J. Science Award
-        content: Presented by the Saint Ignatius High School Science Department for excellence in science inside and outside of the classroom.
-        image: /images/ignatius.png
-      - title: Fr. Larry Belt S.J. Tutoring Award
-        content: Given in honor of Fr. Larry Belt S.J. who as a math teacher at Saint Ignatius High School devoted his time to working with students who needed extra help in the learning of mathematics. Fr. Belt spent much of his time before and after school working with students individually. This award is presented to a senior who has selflessly given his time to tutor his peers in mathematics.
-        image: /images/ignatius.png
-      # - title: Degree of Special Distinction
-      #   content: Issued by the the National Forensic League, Feb 2021, for upholding the highest standards of integrity, humility, respect, leadership, and service in the pursuit of excellence as a member of the National Speech and Debate Association at Saint Ignatius High School.
-      #   # image: /images/special_distinction.jpg
-      # - title: AP Capstone Diploma, AP Scholar with Distinction
-      #   content: Receieved June 2020, for demonstrating outstanding college-level achievement in AP Seminar and AP Research, as well as showing mastery of AP Exams taken (an average score of at least 3.5 on all exams).
-
+    enable: false
 
   # Projects
   projects:
     enable: false
-    items:
-      # - title: Raspberry Pi Computer System
-      #   content: |-
-      #     Built a working computer system on a RPi from the ground up...
-      #   image: /images/projects/display.jpeg
-      #   badges: ["Software", "Engineering"]
 
   # Contact
   contact:
     enable: true
     content: |-
       Please reach out, I'd love to get to know you better!
-      > If we have learned one thing...
     btnName: email
     btnLink: "mailto:valex@stanford.edu"
     # To switch to a form later, enable Formspree:

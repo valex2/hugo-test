@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="container py-5 page-with-sticky-header">
+  <header class="mb-3">
+    <h1 class="mb-1">{{ .Title }}</h1>
+    <div class="text-secondary"><small>{{ .Date.Format "Jan 2006" }}</small></div>
+  </header>
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+
+  {{ with .Params.url }}
+    <div class="mt-4">
+      <a class="btn btn-sm btn-outline-primary" href="{{ . }}" target="_blank" rel="noopener">Visit link</a>
+    </div>
+  {{ end }}
+</article>
+
+<link rel="stylesheet" href="/css/layout-fixes.css">
+{{ end }}
