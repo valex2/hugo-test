@@ -1,42 +1,59 @@
-{{/* 
-  obsidian-media.html
-  - Converts Obsidian image embeds:  ![[file.ext]] or ![[file.ext|Alt text]]
-  - Looks for a page resource that matches the filename and emits a responsive <img>
-  - Leaves unknown embeds untouched, so they won't break rendering.
+{{/* obsidian-media.html
+     - RE2-safe: ONLY converts Obsidian image embeds ![[file]] or ![[file|Alt]]
+     - Skips embedding the "cover" image inside the body (to avoid duplication)
+     - Works with page-bundle resources and absolute/static paths
 */}}
 
 {{- $p := . -}}
 {{- $raw := $p.RawContent -}}
 
-{{/* Regex: capture filename and optional alt after a |  */}}
+{{/* Pattern for ![[filename.ext]] or ![[filename.ext|Alt text]] */}}
 {{- $pattern := `!\[\[([^|\]]+)(?:\|([^\]]+))?\]\]` -}}
 
-{{- $out := $raw | replaceRE $pattern (printf "%%s") -}}
-
-{{/* We need to rebuild with replacements because Hugo replaceRE can't run per-match logic easily. */}}
+{{/* Build a skeleton by replacing each match with a placeholder we can fill */}}
+{{- $skeleton := $raw | replaceRE $pattern "%IMG%" -}}
 {{- $matches := findRE $pattern $raw -}}
-{{- $pieces := split $out "%s" -}}
+{{- $chunks := split $skeleton "%IMG%" -}}
 
-{{- $rendered := slice -}}
-{{- range $i, $piece := $pieces -}}
-  {{- $rendered = $rendered | append $piece -}}
+{{/* Track cover so we can suppress it in-body */}}
+{{- $cover := strings.Trim (printf "%v" $p.Params.cover) " " -}}
+{{- $hasCoverRes := (ne ($p.Resources.GetMatch "cover*") nil) -}}
+
+{{- $out := slice -}}
+{{- range $i, $chunk := $chunks -}}
+  {{- $out = $out | append $chunk -}}
   {{- if lt $i (len $matches) -}}
     {{- $m := index $matches $i -}}
-    {{- $fname := replaceRE $pattern "$1" $m -}}
+    {{- $fname := trim (replaceRE $pattern "$1" $m) " " -}}
     {{- $alt := trim (replaceRE $pattern "$2" $m) " " -}}
 
-    {{- with $p.Resources.GetMatch $fname -}}
-      {{- $card := .Fit "1200x1200 webp q75" -}}
-      {{- $tag := printf `<img class="obsidian-embed hero-img" src="%s" width="%d" height="%d" alt="%s" loading="lazy" decoding="async">` $card.RelPermalink $card.Width $card.Height (cond (ne $alt "") $alt $p.Title) -}}
-      {{- $rendered = $rendered | append $tag -}}
-    {{- else -}}
-      {{/* Fallback: try static path (user may have written a path inside [[...]]). */}}
-      {{- $tag := printf `<img class="obsidian-embed hero-img" src="%s" alt="%s" loading="lazy" decoding="async">` (relURL $fname) (cond (ne $alt "") $alt $p.Title) -}}
-      {{- $rendered = $rendered | append $tag -}}
+    {{/* Suppress if this is the cover image */}}
+    {{- $isCover := false -}}
+    {{- if and (ne $cover "") (eq $fname $cover) -}}
+      {{- $isCover = true -}}
+    {{- else if and $hasCoverRes (or (eq (lower $fname) "cover.jpg") (eq (lower $fname) "cover.png") (hasPrefix (lower $fname) "cover")) -}}
+      {{- $isCover = true -}}
+    {{- end -}}
+
+    {{- if not $isCover -}}
+      {{- with $p.Resources.GetMatch $fname -}}
+        {{- $img := .Fit "1200x1200 webp q75" -}}
+        {{- $tag := printf `<img class="obsidian-embed" src="%s" width="%d" height="%d" alt="%s" loading="lazy" decoding="async">`
+                           $img.RelPermalink $img.Width $img.Height (cond (ne $alt "") $alt $p.Title) -}}
+        {{- $out = $out | append $tag -}}
+      {{- else -}}
+        {{- $isAbs := or (hasPrefix $fname "http://") (or (hasPrefix $fname "https://") (hasPrefix $fname "/")) -}}
+        {{- if $isAbs -}}
+          {{- $tag := printf `<img class="obsidian-embed" src="%s" alt="%s" loading="lazy" decoding="async">` (relURL $fname) (cond (ne $alt "") $alt $p.Title) -}}
+          {{- $out = $out | append $tag -}}
+        {{- else -}}
+          {{- /* Unknown target -> leave the original so you can spot it */ -}}
+          {{- $out = $out | append (printf `![[%s%s]]` $fname (cond (ne $alt "") (printf `|%s` $alt) "")) -}}
+        {{- end -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
 
-{{/* Render the transformed Markdown so normal MD + shortcodes still work */}}
-{{- $markdown := delimit $rendered "" -}}
-{{- $markdown | $p.RenderString -}}
+{{- $final := delimit $out "" -}}
+{{- $final | $p.RenderString -}}
