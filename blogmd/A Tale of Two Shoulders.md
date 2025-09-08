@@ -1,8 +1,8 @@
 ---
-title: "My Note"
+title: "A Tale of Two Shoulders"
 date: 2025-08-12
-description: "Short summary for lists/search"
-tags: ["obsidian","notes"]
+description: "My experience with shoulder surgery and defensive health systems"
+tags: ["Abundance","Healthcare"]
 draft: false
 ---
 
