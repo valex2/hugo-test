@@ -174,8 +174,25 @@ params:
     image: "/images/ski_point.jpeg"
     content: |-
       ##### <span style="color: dodgerblue;"> About me </span>
-      I'm a rising senior at Stanford University, majoring in Electrical Engineering and minoring in Biology. 
-      ...
+      I'm currently a hardware engineer at Until, working on biological time travel
+
+      I believe that the future of humanity is sweetly nestled in the intersection of these two fields; 
+      hardware innovation will enable at-scale distribution of advances in BCIs, health sensing/treatments, 
+      and biomanufacturing -- technologies that will improve lives at a scale of n >> 1,000,000. 
+
+      I'm particularly interested in developing systems that leverage progress across EE and Biology. I'm also interested in developing coherent technology policy that leaves room for R&D, public buy-in, and accessibility for all.
+    
+      In my free time, I love spearfishing, playing spikeball, and thinking about things that make me feel small: the brain, the ocean, and the stars. 
+      
+      ##### <span style="color: dodgerblue;"> Favorite quotes </span>
+      > "The brain is the organ of destiny. It holds within its humming mechanism secrets that will determine the future of the human race" -- **Wilder Penfield**
+      
+      > "If we have learned one thing from the history of invention and discovery, it is that in the long run, and often in the short one, the most daring prophecies seem laughably conservative" -- **Arthur C. Clarke**
+
+      > "The purpose of human life, no matter who is controlling it, is to love whoever is around to be loved" -- **Kurt Vonnegut**
+
+      > "I think we ought to read only the kind of books that wound or stab us. If the book we're reading doesn't wake us up with a blow to the head, what are we reading for? So that it will make us happy?... Good Lord, we would be happy precisely if we had no books..." -- **Franz Kafka**
+
       ##### <span style="color: dodgerblue;"> Things I've been working on recently </span>
       - Cryopreservation ❄️
       - Biosignal Acquisition Hardware 🧠
@@ -188,8 +205,8 @@ params:
     title: "Work Experience"
     items:
       - job: "Hardware Engineer"
-        company: "Cradle ❄️"
-        companyUrl: "https://cradle.xyz/"
+        company: "Until Labs ❄️"
+        companyUrl: "https://www.untillabs.com"
         date: "June 2024 - present"
         info:
           enable: true
@@ -226,7 +243,7 @@ params:
       - job: "Teaching @ Stanford"
         company: "Stanford University 🏫"
         companyUrl: "https://ee.stanford.edu/"
-        date: "September 2023 - present"
+        date: "September 2023 - June 2025 "
         info:
           enable: true
           content: "part-time"
@@ -257,13 +274,20 @@ params:
           name: "Project Writeup"
           url: "https://drive.google.com/file/d/16ARbR6sbUUxR7A_-e7zyqSDiznXVo9ZV/view?usp=sharing"
         content: |
-          My project involved the design and simulation of spiking neural networks (SNNs) ...
+          My project involved the design and simulation of spiking neural networks (SNNs) that model cortical dynamics in order to understand the effects of neuronal lesioning on population-level activity and task performance.
 
   # Education
   education:
     enable: true
     index: false
     items:
+      - title: "Masters of Science in Electrical Engineering"
+        school:
+          name: "Stanford University"
+          url: "https://ee.stanford.edu/"
+        date: "2025 - 2027"
+        GPA: "3.8 out of 4"
+        content: |-
       - title: "Bachelor of Science in Electrical Engineering, Minor in Biology"
         school:
           name: "Stanford University"
@@ -273,10 +297,10 @@ params:
         content: |-
           Extracurricular Activities
             - Electrical Subteam Lead for [Stanford's <u>Robosub AUV Team</u>](https://www.stanfordrobosub.org)
-            - Project Lead and Financial Officer for [Stanford's <u>BIOME</u>](https://stanfordbiome.org/)
-            - Founding member and VP of Industry for [Stanford's <u>NeuroTech Club</u>](...)
-            - Ex co-lead of [SSI <u>Astro-Biology Team</u>](...)
-            - Staffer at [<u>The Bridge Peer Counseling Center</u>](...)
+            - Project Lead and Financial Officer for [Stanford's <u>Biological Interdisciplinary Open Make Environment</u> (BIOME)](https://stanfordbiome.org/)
+            - Founding member and VP of Industry for [Stanford's <u>NeuroTech Club</u>](https://www.linkedin.com/company/stanford-neurotech/?viewAsMember=true) 
+            - Ex co-lead of [Stanford Student Space Initiative's <u>Astro-Biology Team</u>](https://www.stanfordssi.org/)
+            - Staffer at [<u>The Bridge Peer Counseling Center</u>](https://web.stanford.edu/group/bridge/)
       - title: "High School"
         school:
           name: "Saint Ignatius High School"
@@ -292,80 +316,59 @@ params:
   # Achievements
   achievements:
     enable: true
+    # title: "Custom Name"
     items:
       - title: Stanford Existential Risks Initiative (SERI) Summer Fellow
-        content: I was selected as a SERI Summer Fellow for the 2024 cohort...
+        content: I was selected as a SERI Summer Fellow for the 2024 cohort. SERI is a research group at Stanford that focuses on the study of existential risks. My focus is on U.S.-China cooperation on emerging biotechnology.
         url: https://seri.stanford.edu/
         image: /images/Seri.jpeg
       - title: PanHellenic Scholarship Awardee
-        content: The PanHellenic Scholarship Foundation honors outstanding Greek-American students...
+        content: The PanHellenic Scholarship Foundation honors outstanding Greek-American students of high scholastic achievement. Received summer 2024.
         url: https://www.panhellenicsf.org
         image: /images/panehellenic.png
       - title: Boothe Prize Nominee
-        content: |-
-          The Boothe Prize recognizes ...
+        content: |- 
+          The Boothe Prize recognizes and rewards outstanding expository and argumentative writing by students in their first-year writing class. I received a nomination for the award for my research paper Rare Earth Elements and Environmental Policy: Mistakes on the Path to a Sustainable Future
         url: https://drive.google.com/file/d/1QY330V8q5OK4xwgBxTUfeKGwkoJJxRTf/view
         image: /images/stanford.png
+      # - title: "National Merit Finalist"
+      #   content: "Awarded to students who score in the top 1% of the PSAT/NMSQT in their state."
+      #   url: https://www.nationalmerit.org
+      #   image: /images/national_merit.jpg
       - title: State Champion in Policy Debate
-        content: Under the mentorship...
+        content: Under the mentorship, guidance, and support of Sean Lavelle, Joseph Buzzelli, and the rest our policy debate team, my partner, Sam Navracruz, and I finished first at the 2021 OSDA State Tournament with a 5-1 record in prelims and a 4-0 record in the bracket rounds.
         url: https://sites.google.com/view/theosda/results/2020-2021
         image: /images/OSDA.jpg
       - title: Tournament of Champions Qualifier
-        content: Qualified for the 2021 TOC...
+        content: Qualified for the 2021 TOC, one of the most prestigious high school debate tournaments in the country. This was based on my performance debating on the national policy debate circuit.
         url: https://en.wikipedia.org/wiki/Tournament_of_Champions_(debate)
         image: /images/TOC.png
+      # - title: National Speech and Debate Tournament Qualifier
+      #   content: I was an alternate for the 2019 tournament and a qualifier for the 2021 tournament.
+      #   url: https://www.speechanddebate.org/nationals-/?wtime=%7Bseek_to_second_number%7D
+      #   image: /images/NSDT.png
       - title: Fr. James W. Kirby, S.J. Science Award
-        content: Presented by the Saint Ignatius High School Science Department...
+        content: Presented by the Saint Ignatius High School Science Department for excellence in science inside and outside of the classroom.
         image: /images/ignatius.png
       - title: Fr. Larry Belt S.J. Tutoring Award
-        content: Given in honor of Fr. Larry Belt S.J....
+        content: Given in honor of Fr. Larry Belt S.J. who as a math teacher at Saint Ignatius High School devoted his time to working with students who needed extra help in the learning of mathematics. Fr. Belt spent much of his time before and after school working with students individually. This award is presented to a senior who has selflessly given his time to tutor his peers in mathematics.
         image: /images/ignatius.png
+      # - title: Degree of Special Distinction
+      #   content: Issued by the the National Forensic League, Feb 2021, for upholding the highest standards of integrity, humility, respect, leadership, and service in the pursuit of excellence as a member of the National Speech and Debate Association at Saint Ignatius High School.
+      #   # image: /images/special_distinction.jpg
+      # - title: AP Capstone Diploma, AP Scholar with Distinction
+      #   content: Receieved June 2020, for demonstrating outstanding college-level achievement in AP Seminar and AP Research, as well as showing mastery of AP Exams taken (an average score of at least 3.5 on all exams).
+
 
   # Projects
   projects:
-    enable: true
+    enable: false
     items:
-      - title: Raspberry Pi Computer System
-        content: |-
-          Built a working computer system on a RPi from the ground up...
-        image: /images/projects/display.jpeg
-        badges: ["Software", "Engineering"]
-      - title: Data-Driven Analysis of Glioblastoma Treatment Patterns
-        content: Analyzed unstructured medical records...
-        image: /images/projects/gbm2.jpeg
-        featured:
-          name: Publication
-          link: https://ascopubs.org/doi/10.1200/CCI.23.00091
-        badges: ["Health", "Research"]
-      - title: Space Biology @ Stanford
-        content: Helped revive the space biology community...
-        image: /images/projects/symposium.jpg
-        featured:
-          name: Website (with speaker recordings!)
-          link: https://spacebiology.squarespace.com/
-        badges: ["Space"]
-      - title: Population Activity in Balanced Spiking Neural Networks after Neuron Loss
-        content: |-
-          I designed, developed, and tested an SNN...
-        image: /images/projects/state_space_rot_2.png
-        badges: ["Neuroscience", "Research", "Engineering"]
-        links:
-          - icon: fab fa-github
-            url: https://github.com/valex2/ablation_sims
-          - icon: fab fa-google-drive
-            url: https://github.com/valex2/ablation_sims/blob/main/Poster/Analysis%20...pdf
-        featured:
-          name: Project Writeup
-          url: https://github.com/valex2/ablation_sims/blob/main/Writeup/Robustness%20...pdf
-      - title: CaffE.Coli
-        content: |-
-          Engineered E. coli to produce caffeine...
-        image: /images/projects/caffecoli.png
-        badges: ["Biology", "Engineering"]
-      - title: "🇬🇷 -> 🚀"
-        content: I built an L1 high-power rocket...
-        image: /images/projects/rocket.jpg
-        badges: ["Space", "Engineering"]
+      # - title: Raspberry Pi Computer System
+      #   content: |-
+      #     Built a working computer system on a RPi from the ground up...
+      #   image: /images/projects/display.jpeg
+      #   badges: ["Software", "Engineering"]
 
   # Contact
   contact:
@@ -388,7 +391,7 @@ params:
       path: "blogs"
       count: 3
       title: Recent Posts
-      enable: true
+      enable: false
       disableFeaturedImage: false
     socialNetworks:
       github: https://github.com/valex2

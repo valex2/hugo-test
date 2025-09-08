@@ -13,6 +13,7 @@
       {{- end -}}
     </div>
 
+    {{/* Tag chips */}}
     {{ $colors := slice "primary" "secondary" "success" "danger" "warning" "info" }}
     {{ with .Params.project_tags }}
       <div class="pt-2 d-flex flex-wrap gap-1">
@@ -24,6 +25,58 @@
         {{ end }}
       </div>
     {{ end }}
+
+    {{/* -------- Link buttons (repo, website, pdf, etc.) under the tags -------- */}}
+    {{- $links := slice -}}
+
+    {{- with .Params.repo -}}
+      {{- $links = $links | append (dict "label" "Repo" "url" . "icon" "fab fa-github") -}}
+    {{- end -}}
+    {{- with .Params.website -}}
+      {{- $links = $links | append (dict "label" "Website" "url" . "icon" "fas fa-globe") -}}
+    {{- end -}}
+    {{- with .Params.demo -}}
+      {{- $links = $links | append (dict "label" "Demo" "url" . "icon" "fas fa-play-circle") -}}
+    {{- end -}}
+    {{- with .Params.pdf -}}
+      {{- $links = $links | append (dict "label" "PDF" "url" . "icon" "fas fa-file-pdf") -}}
+    {{- end -}}
+    {{- with .Params.paper -}}
+      {{- $links = $links | append (dict "label" "Paper" "url" . "icon" "fas fa-file-alt") -}}
+    {{- end -}}
+
+    {{/* Optional flexible array:
+        links:
+          - label: Poster
+            url: /files/auv_crush_poster.pdf
+            icon: fas fa-file
+          - label: Docs
+            url: https://example.com/docs
+            icon: fas fa-book
+    */}}
+    {{- with .Params.links -}}
+      {{- range . -}}
+        {{- $label := .label | default (.name | default "Link") -}}
+        {{- $url   := .url   | default .href -}}
+        {{- $icon  := .icon  | default "fas fa-link" -}}
+        {{- if $url -}}
+          {{- $links = $links | append (dict "label" $label "url" $url "icon" $icon) -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{ if gt (len $links) 0 }}
+      <div class="mt-3 d-flex flex-wrap gap-2">
+        {{ range $links }}
+          <a href="{{ .url }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">
+            {{ with .icon }}<i class="{{ . }} me-1" aria-hidden="true"></i>{{ end }}{{ .label }}
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{/* -------- /Link buttons -------- */}}
+
+    {{/* Intentionally NO hero image here (disabled by request) */}}
   </header>
 
   <div class="content">
