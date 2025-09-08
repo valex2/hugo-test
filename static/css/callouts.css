@@ -1,0 +1,43 @@
+/* Base blockquote look (applies to plain "> ..." too) */
+.content blockquote {
+  border-left: .25rem solid var(--primary-color);
+  background-color: var(--secondary-background-color);
+  padding: .75rem 1rem;
+  margin: 1rem 0;
+  border-radius: .25rem;
+}
+
+/* Callout container */
+.callout {
+  border-left-width: .4rem;
+  padding: .75rem 1rem;
+  margin: 1rem 0;
+  border-radius: .5rem;
+}
+
+/* Title row inside callout */
+.callout .callout-title {
+  font-weight: 700;
+  margin-bottom: .25rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* Body */
+.callout .callout-body > :first-child { margin-top: 0; }
+.callout .callout-body > :last-child  { margin-bottom: 0; }
+
+/* Variants (match Bootstrap palette used by your theme) */
+.callout-note     { border-left-color: #6c757d; background-color: rgba(108,117,125,.08); }
+.callout-tip,
+.callout-idea     { border-left-color: #0dcaf0; background-color: rgba(13,202,240,.08); }
+.callout-info     { border-left-color: #0d6efd; background-color: rgba(13,110,253,.08); }
+.callout-warning,
+.callout-caution,
+.callout-important{ border-left-color: #ffc107; background-color: rgba(255,193,7,.12); }
+.callout-success  { border-left-color: #198754; background-color: rgba(25,135,84,.10); }
+.callout-danger,
+.callout-error,
+.callout-bug      { border-left-color: #dc3545; background-color: rgba(220,53,69,.10); }
+.callout-quote    { border-left-color: #7952b3; background-color: rgba(121,82,179,.10); }

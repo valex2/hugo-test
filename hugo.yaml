@@ -1,6 +1,6 @@
 module:
   mounts:
-    - source: "blogmd"        # your Obsidian folder in the repo root
+    - source: "/Users/Vassilis/Documents/Obsidian Vault/PublicBlog"        # your Obsidian folder in the repo root
       target: "content/blogs" # becomes the /blogs section
 
 baseURL: "https://example.com/"   # ← set your real production URL (with https://)

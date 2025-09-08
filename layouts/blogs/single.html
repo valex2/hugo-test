@@ -1,0 +1,32 @@
+{{ define "main" }}
+<article class="container py-5">
+  <header class="mb-3">
+    <h1 class="mb-1">{{ .Title }}</h1>
+    <div class="text-secondary">
+      <small>{{ .Date.Format "Jan 2, 2006" }}</small>
+      {{ with .ReadingTime }}<span id="readingTime"> {{ $.Site.Params.singlePages.readTime.content }}</span>{{ end }}
+    </div>
+
+    {{/* Tag chips under the title */}}
+    {{ $colors := slice "primary" "secondary" "success" "danger" "warning" "info" }}
+    {{ with .Params.tags }}
+      <div class="pt-2 d-flex flex-wrap gap-1">
+        {{ range . }}
+          {{ $idx := mod (len .) (len $colors) }}
+          <a class="badge bg-{{ index $colors $idx }}" href="/tags/{{ . | urlize }}/" title="View posts tagged '{{ . }}'">
+            {{ . }}
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </header>
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+</article>
+
+<!-- Load callout styling/conversion for Obsidian-style > [!NOTE] blocks -->
+<link rel="stylesheet" href="/css/callouts.css">
+<script src="/js/callouts.js" defer></script>
+{{ end }}

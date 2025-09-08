@@ -1,0 +1,6 @@
+#tag-filter button.badge { cursor: pointer; font-weight: 600; }
+.post-card .tag-chip { text-decoration: none; }
+.post-card .tag-chip:hover { filter: brightness(0.95); }
+
+/* Single post header chip spacing (safety if any global styles collide) */
+article header .badge { vertical-align: middle; }
