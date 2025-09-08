@@ -1,0 +1,22 @@
+{{ $p := . }}
+<article class="card project-card">
+  <a class="card-cover" href="{{ $p.RelPermalink }}">
+    {{ with $p.Params.cover }}
+      <img src="{{ . | relURL }}" alt="{{ $p.Title }}" loading="lazy" />
+    {{ end }}
+  </a>
+  <div class="card-body">
+    <h2 class="card-title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h2>
+    {{ with $p.Params.summary }}<p class="card-summary">{{ . }}</p>{{ end }}
+    <div class="card-meta">
+      {{ with $p.Date }}<time>{{ .Format (site.Params.projects.dateFormat | default "Jan 2, 2006") }}</time>{{ end }}
+      {{ with $p.Params.project_tags }}
+        <span class="tags">
+          {{ range . }}
+            <a class="tag" href="{{ (site.GetPage (print "/project_tags/" .)).RelPermalink }}">#{{ . }}</a>
+          {{ end }}
+        </span>
+      {{ end }}
+    </div>
+  </div>
+</article>

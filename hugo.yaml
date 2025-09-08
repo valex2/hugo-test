@@ -2,6 +2,8 @@ module:
   mounts:
     - source: "/Users/Vassilis/Documents/Obsidian Vault/PublicBlog"        # your Obsidian folder in the repo root
       target: "content/blogs" # becomes the /blogs section
+    - source: "/Users/Vassilis/Documents/Obsidian Vault/PublicProjects"     # ← adjust if your projects live elsewhere
+      target: "content/projects"
 
 baseURL: "https://example.com/"   # ← set your real production URL (with https://)
 languageCode: "en-us"
@@ -10,8 +12,14 @@ theme: "hugo-profile"
 
 # What Hugo should build for each kind of page
 outputs:
-  home: ["HTML", "RSS", "JSON"]   # JSON enables /index.json for client-side search
+  home: ["HTML", "RSS", "JSON"]        # JSON enables /index.json for client-side search
   page: ["HTML", "RSS"]
+  section: ["HTML", "RSS"]             # ← ensures /projects/ and /blogs/ can expose RSS
+
+# Pretty URLs for each section
+permalinks:
+  blogs: "/blogs/:slug/"
+  projects: "/projects/:slug/"
 
 paginate: 9                       # lowercase per Hugo; tweak page size as you like
 enableRobotsTXT: true
@@ -26,7 +34,13 @@ markup:
     renderer:
       unsafe: true
 
-# Main nav (Hugo expects lowercase 'menu')
+# Taxonomies (projects keep their own tag set)
+taxonomies:
+  tag: tags
+  category: categories
+  project_tag: project_tags
+
+# Single, consolidated menu (removed duplicates)
 menu:
   main:
     - identifier: blog
@@ -39,7 +53,6 @@ menu:
       title: Project/media gallery
       url: /gallery
       weight: 2
-    # Dropdown example
     - identifier: dropdown
       name: Dropdown
       title: Example dropdown menu
@@ -56,12 +69,23 @@ menu:
       url: /#
       parent: dropdown
       weight: 2
+    - identifier: projects
+      name: Projects
+      title: My projects
+      url: /projects
+      weight: 4
 
 params:
   title: "Vassili Alexopoulos"
   description: "Text about my cool site"
   # favicon: "/fav.png"
   useBootstrapCDN: false
+
+  # Projects section UI defaults (parity with blog)
+  projects:
+    listPaginate: 10
+    showReadingTime: true
+    dateFormat: "Jan 2, 2006"
 
   mathjax: false
   animate: true

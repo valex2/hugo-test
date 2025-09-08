@@ -1,0 +1,42 @@
+{{ define "main" }}
+<article class="container py-5">
+  <header class="mb-3">
+    <h1 class="mb-1">{{ .Title }}</h1>
+
+    <div class="text-secondary d-flex align-items-center gap-2">
+      <small>{{ .Date.Format "Jan 2, 2006" }}</small>
+      {{- $rt := .ReadingTime -}}
+      {{- if gt $rt 0 -}}
+        <span class="text-secondary" title="{{ .WordCount }} words">
+          {{ $rt }} {{ $.Site.Params.singlePages.readTime.content }}
+        </span>
+      {{- end -}}
+    </div>
+
+    {{/* Project tag chips under the title */}}
+    {{ $colors := slice "primary" "secondary" "success" "danger" "warning" "info" }}
+    {{ with .Params.project_tags }}
+      <div class="pt-2 d-flex flex-wrap gap-1">
+        {{ range . }}
+          {{ $idx := mod (len .) (len $colors) }}
+          <a class="badge bg-{{ index $colors $idx }}" href="/project_tags/{{ . | urlize }}/" title="View projects tagged '{{ . }}'">
+            {{ . }}
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+
+    {{ with or .Params.cover .Params.featuredImage }}
+      <figure class="mt-3">
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="img-fluid rounded">
+      </figure>
+    {{ end }}
+  </header>
+
+  <div class="content">
+    {{ partial "obsidian-callouts.html" . }}
+  </div>
+</article>
+
+<link rel="stylesheet" href="/css/callouts.css">
+{{ end }}

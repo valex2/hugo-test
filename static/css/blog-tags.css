@@ -4,3 +4,7 @@
 
 /* Single post header chip spacing (safety if any global styles collide) */
 article header .badge { vertical-align: middle; }
+
+.aspect-16x9 { aspect-ratio: 16 / 9; }
+.obj-cover { object-fit: cover; }
+.card-img-top { display:block; width:100%; border-top-left-radius:.5rem; border-top-right-radius:.5rem; }
