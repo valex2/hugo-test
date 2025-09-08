@@ -1,3 +1,9 @@
+  # blog
+  module:
+  mounts:
+    - source: "blogmd"        # path to your Obsidian folder (relative to the repo root)
+      target: "content/blogs"    # becomes the /blogs section
+
 baseURL: "https://example.com/"   # ← set your real production URL (with https://)
 languageCode: "en-us"
 title: "Vassili Alexopoulos"
