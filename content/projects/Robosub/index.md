@@ -3,9 +3,9 @@ title: AUV Crush
 date: 2025-08-14
 summary: Autonomous underwater vehicle with CTD, DVL, and custom actuation.
 project_tags:
-  - auv
-  - embedded
-  - sensors
+  - PCB design
+  - system engineering
+  - firmware
 project_type: hardware
 status: active
 repo: https://github.com/stanford-robosub/crush
