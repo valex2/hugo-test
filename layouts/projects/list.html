@@ -28,36 +28,60 @@
 
     <div id="blog-grid" class="row justify-content-center px-3 px-md-5">
       {{ range .Paginator.Pages }}
-        {{ $tags := .Params.project_tags }}
+        {{ $p := . }}
+        {{ $tags := $p.Params.project_tags }}
         {{ $tagsUrlized := slice }}
         {{ range $t := $tags }}{{ $tagsUrlized = $tagsUrlized | append ($t | urlize) }}{{ end }}
         <div class="col-lg-4 col-md-6 my-3 post-card" data-tags="{{ delimit $tagsUrlized " " }}">
           <div class="card h-100">
 
-            {{/* ---- Card Image (cover -> featuredImage -> first bundle match) ---- */}}
-            {{ $img := or .Params.cover .Params.featuredImage }}
-            {{ with $img }}
+            {{/* ------------ Card Image Resolver ------------- */}}
+            {{/* Accept cover | featuredImage | image */}}
+            {{ $imgParam := or $p.Params.cover (or $p.Params.featuredImage $p.Params.image) }}
+
+            {{/* Helper: does a string look like an external or absolute URL? */}}
+            {{ $isAbs := false }}
+            {{ with $imgParam }}
+              {{ $isAbs = or (hasPrefix . "http://") (or (hasPrefix . "https://") (hasPrefix . "/")) }}
+            {{ end }}
+
+            {{/* 1) If absolute or full URL, just use it */}}
+            {{ if and $imgParam $isAbs }}
               <img
-                src="{{ . | relURL }}"
-                alt="{{ $.Title }}" loading="lazy" decoding="async"
+                src="{{ $imgParam | relURL }}"
+                alt="{{ $p.Title }}" loading="lazy" decoding="async"
                 class="card-img-top obj-cover aspect-16x9">
-            {{ else }}
-              {{ with .Resources.GetMatch (or .Params.cardImage "cover*") }}
+
+            {{/* 2) Else, try page-bundle resource by that exact name */}}
+            {{ else if and $imgParam ($p.Resources.GetMatch $imgParam) }}
+              {{ with $p.Resources.GetMatch $imgParam }}
                 {{ $card := .Fit "768x432 webp q75" }}
                 <img
                   src="{{ $card.RelPermalink }}"
                   width="{{ $card.Width }}" height="{{ $card.Height }}"
-                  alt="{{ $.Title }}" loading="lazy" decoding="async"
+                  alt="{{ $p.Title }}" loading="lazy" decoding="async"
+                  class="card-img-top obj-cover aspect-16x9">
+              {{ end }}
+
+            {{/* 3) Else, try a generic bundle match like cover* */}}
+            {{ else if $p.Resources.GetMatch "cover*" }}
+              {{ with $p.Resources.GetMatch "cover*" }}
+                {{ $card := .Fit "768x432 webp q75" }}
+                <img
+                  src="{{ $card.RelPermalink }}"
+                  width="{{ $card.Width }}" height="{{ $card.Height }}"
+                  alt="{{ $p.Title }}" loading="lazy" decoding="async"
                   class="card-img-top obj-cover aspect-16x9">
               {{ end }}
             {{ end }}
+            {{/* ------------ /Card Image Resolver ------------- */}}
 
             <div class="card-body p-3">
-              <h5 class="card-title mt-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
+              <h5 class="card-title mt-1"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h5>
               <div class="text-secondary">
-                <small>{{ with .Date }}{{ .Format "Jan 2, 2006" }}{{ end }}</small>
+                <small>{{ with $p.Date }}{{ .Format "Jan 2, 2006" }}{{ end }}</small>
               </div>
-              {{ with or .Params.summary .Params.description }}
+              {{ with or $p.Params.summary $p.Params.description }}
                 <p class="card-text mt-2">{{ . }}</p>
               {{ end }}
               {{ if $tags }}
