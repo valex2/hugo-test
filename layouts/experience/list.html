@@ -1,0 +1,110 @@
+{{ define "main" }}
+<section class="py-5">
+  <div class="container">
+    <h3 class="text-center">{{ .Title }}</h3>
+    {{ with .Content }}<div class="text-center mb-4">{{ . }}</div>{{ end }}
+
+    {{/* Collect all experience tags (case-preserving) */}}
+    {{ $allTags := slice }}
+    {{ range .Pages }}
+      {{ with .Params.experience_tags }}{{ $allTags = $allTags | union . }}{{ end }}
+    {{ end }}
+
+    {{ $colors := slice "primary" "secondary" "success" "danger" "warning" "info" }}
+
+    {{ if gt (len $allTags) 0 }}
+      <div id="tag-filter" class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+        <button class="btn btn-sm btn-outline-dark" data-tag="__all">All</button>
+        {{ range $i, $t := $allTags }}
+          {{ $idx := mod (len $t) (len $colors) }}
+          <button class="badge border-0 bg-{{ index $colors $idx }}" data-tag="{{ $t | urlize }}">
+            {{ $t }}
+          </button>
+        {{ end }}
+      </div>
+    {{ end }}
+
+    <div id="blog-grid" class="row justify-content-center px-3 px-md-5">
+      {{ range .Paginator.Pages }}
+        {{ $p := . }}
+        {{ $tags := $p.Params.experience_tags }}
+        {{ $tagsUrlized := slice }}
+        {{ range $t := $tags }}{{ $tagsUrlized = $tagsUrlized | append ($t | urlize) }}{{ end }}
+
+        {{/* Compute display range for each card */}}
+        {{ $startTime := $p.Date }}
+        {{ with $p.Params.start }}{{ $startTime = time . }}{{ end }}
+        {{ $endRaw := $p.Params.end }}
+        {{ $endStr := "Present" }}
+        {{ if $endRaw }}{{ $endStr = (time $endRaw).Format "Jan 2006" }}{{ end }}
+
+        <div class="col-lg-4 col-md-6 my-3 post-card" data-tags="{{ delimit $tagsUrlized " " }}">
+          <div class="card h-100">
+
+            {{/* ------------ Card Image (UNCROPPED) ------------- */}}
+            {{ $imgParam := or $p.Params.cover (or $p.Params.featuredImage $p.Params.image) }}
+            {{ $isAbs := false }}
+            {{ with $imgParam }}
+              {{ $isAbs = or (hasPrefix . "http://") (or (hasPrefix . "https://") (hasPrefix . "/")) }}
+            {{ end }}
+
+            {{ if and $imgParam $isAbs }}
+              <img
+                src="{{ $imgParam | relURL }}"
+                alt="{{ $p.Title }}" loading="lazy" decoding="async"
+                class="card-img-top natural-ratio">
+            {{ else if and $imgParam ($p.Resources.GetMatch $imgParam) }}
+              {{ with $p.Resources.GetMatch $imgParam }}
+                <img
+                  src="{{ .RelPermalink }}"
+                  alt="{{ $p.Title }}" loading="lazy" decoding="async"
+                  class="card-img-top natural-ratio">
+              {{ end }}
+            {{ else if $p.Resources.GetMatch "cover*" }}
+              {{ with $p.Resources.GetMatch "cover*" }}
+                <img
+                  src="{{ .RelPermalink }}"
+                  alt="{{ $p.Title }}" loading="lazy" decoding="async"
+                  class="card-img-top natural-ratio">
+              {{ end }}
+            {{ end }}
+            {{/* ------------ /Card Image ------------- */}}
+
+            <div class="card-body p-3">
+              <h5 class="card-title mt-1"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h5>
+              <div class="text-secondary">
+                <small>{{ $startTime.Format "Jan 2006" }} – {{ $endStr }}</small>
+              </div>
+
+              {{ with or $p.Params.summary $p.Params.description }}
+                <p class="card-text mt-2">{{ . }}</p>
+              {{ end }}
+
+              {{ if $tags }}
+                <div class="pt-1 d-flex flex-wrap gap-1">
+                  {{ range $t := $tags }}
+                    {{ $idx := mod (len $t) (len $colors) }}
+                    <a class="badge bg-{{ index $colors $idx }} tag-chip"
+                       href="/experience_tags/{{ $t | urlize }}/"
+                       data-filter="{{ $t | urlize }}">
+                      {{ $t }}
+                    </a>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</section>
+
+<link rel="stylesheet" href="/css/blog-tags.css">
+<script src="/js/tag-filter.js" defer></script>
+<link rel="stylesheet" href="/css/callouts.css">
+<script src="/js/callouts.js" defer></script>
+<link rel="stylesheet" href="/css/layout-fixes.css">
+{{ end }}

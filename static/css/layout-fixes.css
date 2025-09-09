@@ -1,9 +1,9 @@
-/* Space below a fixed/sticky site header */
-:root { --header-h: 64px; }            /* adjust if your header is taller */
+/* -------------------- Sticky header & anchor spacing -------------------- */
+:root { --header-h: 64px; }  /* adjust if your header is taller */
 html { scroll-padding-top: var(--header-h); }  /* anchors won't hide under header */
 .page-with-sticky-header { padding-top: clamp(0px, 2vh, var(--header-h)); }
 
-/* Make sure images don't visually "bleed" over the header due to stacking contexts */
+/* -------------------- Card & hero images -------------------- */
 .card-img-top,
 .hero-img {
   display: block;
@@ -12,10 +12,12 @@ html { scroll-padding-top: var(--header-h); }  /* anchors won't hide under heade
   object-fit: cover;
   aspect-ratio: 16 / 9;
   position: relative;
-  z-index: 0;  /* keeps images under any sticky nav (which should have z-index > 100) */
+  z-index: 0; /* keeps images under any sticky nav (nav should have z-index > 100) */
 }
 
-/* General content images */
+.card-img-top { background: var(--card-bg, transparent); }
+
+/* -------------------- General content images -------------------- */
 .content img {
   max-width: 100%;
   height: auto;
@@ -24,9 +26,39 @@ html { scroll-padding-top: var(--header-h); }  /* anchors won't hide under heade
   border-radius: .5rem;
 }
 
+/* -------------------- Natural ratio (no crop) -------------------- */
 .natural-ratio {
   width: 100%;
-  height: auto;   /* scale naturally */
+  height: auto;
   display: block;
-  object-fit: contain;  /* no crop */
+  object-fit: contain; /* shows entire image, adds letterbox if needed */
+}
+
+/* -------------------- Tags / Badges -------------------- */
+.tags-filter .tag,
+.tags .tag,
+.tag-sm {
+  display: inline-block;
+  margin: 0 .25rem .25rem 0;
+  padding: .15rem .5rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  text-decoration: none;
+  border: 1px solid var(--border, #333);
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Make filter/tag badges look good across light & dark modes */
+.badge.bg-primary   { color: #fff; }
+.badge.bg-secondary { color: #fff; }
+.badge.bg-success   { color: #fff; }
+.badge.bg-danger    { color: #fff; }
+.badge.bg-warning   { color: #111; }
+.badge.bg-info      { color: #111; }
+
+/* Filter pills alignment */
+#tag-filter .badge {
+  padding: .45rem .6rem;
+  font-weight: 600;
 }

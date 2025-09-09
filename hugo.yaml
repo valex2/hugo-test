@@ -9,8 +9,12 @@ module:
       target: "content/blogs"
 
     # 3) Mount achievements if you want to use that section (optional)
-    - source: "/Users/Vassilis/Documents/Obsidian Vault/Achievements"
+    - source: "/Users/Vassilis/Documents/Obsidian Vault/PublicAchievements"
       target: "content/achievements"
+
+    # 4) Mount experience
+    - source: "/Users/Vassilis/Documents/Obsidian Vault/PublicExperience"
+      target: "content/experience"
 
     # (optional but recommended so Hugo knows about your other folders explicitly)
     - source: static
@@ -55,6 +59,9 @@ taxonomies:
   tag: tags
   category: categories
   project_tag: project_tags
+  experience_tags: experience_tags
+
+paginate: 12
 
 # Single, consolidated menu (removed duplicates)
 menu:
@@ -89,11 +96,15 @@ menu:
       name: Projects
       title: My projects
       url: /projects/
-      weight: 4
+      weight: 2
     - identifier: achievements
       name: Achievements
       url: /achievements/
-      weight: 5
+      weight: 3
+    - identifier: experience
+      name: Experience
+      url: /experience/
+      weight: 4
 
 
 params:
@@ -184,11 +195,9 @@ params:
     image: "/images/ski_point.jpeg"
     content: |-
       ##### <span style="color: dodgerblue;"> About me </span>
-      I'm currently a hardware engineer at Until, working on biological time travel
+      I'm currently a hardware engineer at Until, working on biological time travel.
 
-      I believe that the future of humanity is sweetly nestled in the intersection of these two fields; 
-      hardware innovation will enable at-scale distribution of advances in BCIs, health sensing/treatments, 
-      and biomanufacturing -- technologies that will improve lives at a scale of n >> 1,000,000. 
+      I believe that the future of humanity is sweetly nestled in the intersection of biology and electrical engineering. I believe that continued progress in hardware innovation will enable at-scale distribution of advances in BCIs, health sensing/treatments, and biomanufacturing -- technologies that will improve lives at a scale of n >> 1,000,000.
 
       I'm particularly interested in developing systems that leverage progress across EE and Biology. I'm also interested in developing coherent technology policy that leaves room for R&D, public buy-in, and accessibility for all.
     
@@ -203,7 +212,7 @@ params:
 
       > "I think we ought to read only the kind of books that wound or stab us. If the book we're reading doesn't wake us up with a blow to the head, what are we reading for? So that it will make us happy?... Good Lord, we would be happy precisely if we had no books..." -- **Franz Kafka**
 
-      ##### <span style="color: dodgerblue;"> currently working on: </span>
+      ##### <span style="color: dodgerblue;"> Currently working on </span>
       - Cryopreservation ❄️
       - Autonomous Underwater Vehicles 🌊
       - US Biotechnology Policy 🏛️
