@@ -41,7 +41,6 @@ permalinks:
   projects: "/projects/:slug/"
   achievements: "/achievements/:slug/"
 
-paginate: 9                       # lowercase per Hugo; tweak page size as you like
 enableRobotsTXT: true
 
 # Optional services
@@ -66,11 +65,24 @@ paginate: 12
 # Single, consolidated menu (removed duplicates)
 menu:
   main:
+    - identifier: experience
+      name: Experience
+      url: /experience/
+      weight: 1
+    - identifier: projects
+      name: Projects
+      title: My projects
+      url: /projects/
+      weight: 2
+    - identifier: achievements
+      name: Achievements
+      url: /achievements/
+      weight: 3
     - identifier: blog
       name: Blog
       title: Blog posts
       url: /blogs
-      weight: 1
+      weight: 4
     # - identifier: gallery
     #   name: Gallery
     #   title: Project/media gallery
@@ -92,19 +104,8 @@ menu:
     #   url: /#
     #   parent: dropdown
     #   weight: 2
-    - identifier: projects
-      name: Projects
-      title: My projects
-      url: /projects/
-      weight: 2
-    - identifier: achievements
-      name: Achievements
-      url: /achievements/
-      weight: 3
-    - identifier: experience
-      name: Experience
-      url: /experience/
-      weight: 4
+
+
 
 
 params:
@@ -219,80 +220,11 @@ params:
 
   # Experience
   experience:
-    enable: true
-    title: "Work Experience"
-    items:
-      - job: "Hardware Engineer"
-        company: "Until Labs ❄️"
-        companyUrl: "https://www.untillabs.com"
-        date: "June 2024 - present"
-        info:
-          enable: true
-          content: "full time during the summer, part-time during the school year"
-        content: |
-          I work on designing ultra-fast thermal systems for whole-organ cryopreservation.
-          - Magnetic nanoparticle synthesis and functionalization for nanowarming applications
-          - Design and controls system engineering of custom controlled-rate freezers
-          - Simulating CPA diffusion and membrane transport phenomena 
-      - job: "Platform Architecture Intern"
-        company: "Apple 🍎"
-        companyUrl: "https://www.apple.com/"
-        date: "Mar 2024 - Jun 2024"
-        info:
-          enable: true
-          content: "12 week internship"
-        content: |
-          I worked with Apple's Exploratory Design Group (XDG) to drive research of a novel health-sensing project.
-          - Flex PCB Design (Cadence Allegro)
-          - Analog signal chain optimization
-          - Time-series biosignal analysis
-          - Experimental data collection
-      - job: "Software Engineering Intern"
-        company: "Zeit Medical ⚕︎"
-        companyUrl: "https://www.zeitmedical.com/"
-        date: "September 2023 - March 2024"
-        info:
-          enable: true
-          content: "part-time internship"
-        content: |
-          I developed a semi-automated framework to differentiate between high and low-quality EEG headband recordings via hand-labeling and model-assisted noise detection.
-          - Time-series data analysis using Python, Numpy, Pandas, SciPy
-          - Feature extraction from multi-channel EEG data
-      - job: "Teaching @ Stanford"
-        company: "Stanford University 🏫"
-        companyUrl: "https://ee.stanford.edu/"
-        date: "September 2023 - June 2025 "
-        info:
-          enable: true
-          content: "part-time"
-        content: |
-          I've been part of the teaching team for the following courses:
-          - EE 101A: Circuits I (<b>Grader</b>, Summer 2024)
-          - EE 225: Biochips and Medical Imaging (<b>Teaching Assistant</b>, Winter 2024)
-          - EE 263: Introduction to Linear Dynamical Systems (<b>Grader</b>, Fall 2023)
-          -----------------------------------
-          I've also worked as a <b>resident assistant</b> at the following dorms:
-          - Lagunita, Granada (2024-2025, freshman)
-          - Wilbur, Arroyo (2023-2024, upperclass)
+    enable: false
 
   # Research Experience (kept as used by your theme)
   researchexperience:
-    enable: true
-    title: "Research Experience"
-    items:
-      - position: "Research Assistant"
-        company: "Brain Interfacing Lab 🧠"
-        companyUrl: "https://bil.stanford.edu/"
-        date: "May 2023 - May 2024"
-        info:
-          enable: true
-          content: "full time during the summer, part-time during the school year"
-        featuredLink:
-          enable: true
-          name: "Project Writeup"
-          url: "https://drive.google.com/file/d/16ARbR6sbUUxR7A_-e7zyqSDiznXVo9ZV/view?usp=sharing"
-        content: |
-          My project involved the design and simulation of spiking neural networks (SNNs) that model cortical dynamics in order to understand the effects of neuronal lesioning on population-level activity and task performance.
+    enable: false
 
   # Education
   education:
