@@ -105,9 +105,6 @@ menu:
     #   parent: dropdown
     #   weight: 2
 
-
-
-
 params:
   title: "Vassili Alexopoulos"
   description: "Text about my cool site"
@@ -145,7 +142,7 @@ params:
       secondaryTextColor: "#b0b3b8"
       backgroundColor: "#18191a"
       secondaryBackgroundColor: "#212529"
-      primaryColor: "#ffffff"
+      primaryColor: "#007bff"
       secondaryColor: "#212529"
 
   navbar:

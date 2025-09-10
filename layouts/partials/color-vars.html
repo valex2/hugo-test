@@ -1,0 +1,20 @@
+<style>
+  :root {
+    --text: {{ site.Params.color.textColor | default "#343a40" }};
+    --text-secondary: {{ site.Params.color.secondaryTextColor | default "#6c757d" }};
+    --bg: {{ site.Params.color.backgroundColor | default "#eaedf0" }};
+    --bg-secondary: {{ site.Params.color.secondaryBackgroundColor | default "#64ffda1a" }};
+    --primary: {{ site.Params.color.primaryColor | default "#007bff" }};
+    --secondary: {{ site.Params.color.secondaryColor | default "#f8f9fa" }};
+  }
+
+  /* Dark mode override (works with either a data attribute or a body class) */
+  [data-theme="dark"], body.dark {
+    --text: {{ site.Params.color.darkmode.textColor | default "#e4e6eb" }};
+    --text-secondary: {{ site.Params.color.darkmode.secondaryTextColor | default "#b0b3b8" }};
+    --bg: {{ site.Params.color.darkmode.backgroundColor | default "#18191a" }};
+    --bg-secondary: {{ site.Params.color.darkmode.secondaryBackgroundColor | default "#212529" }};
+    --primary: {{ site.Params.color.darkmode.primaryColor | default "#007bff" }};
+    --secondary: {{ site.Params.color.darkmode.secondaryColor | default "#212529" }};
+  }
+</style>
