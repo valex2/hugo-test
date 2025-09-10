@@ -105,6 +105,11 @@ tags:
     sections: ["projects", "experience", "blogs"]
   
   # Research & Academic
+  "Teaching":
+    color: "#7C2D12"  # Brown
+    weight: 85
+    sections: ["experience", "projects", "blogs"]
+
   "Research":
     color: "#7C2D12"  # Brown
     weight: 85

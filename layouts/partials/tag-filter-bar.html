@@ -16,9 +16,9 @@
   }}
 {{ end }}
 
-{{/* Collect all tags from pages */}}
+{{/* Collect all tags from non-draft pages */}}
 {{ $allTags := slice }}
-{{ range $pages }}
+{{ range where $pages "Draft" "!=" true }}
   {{ $pageTags := slice }}
   {{ if eq $section "projects" }}
     {{ $pageTags = .Params.project_tags }}
@@ -130,10 +130,10 @@
               {{ $color = index $fallbackColors $fallbackIdx }}
             {{ end }}
 
-            <li>
-              <button class="dropdown-item filter-tag-btn p-2" 
+            <li class="d-flex">
+              <button class="badge border-0 filter-tag-btn w-100 text-start" 
                       data-tag="{{ $tag | urlize }}"
-                      style="background-color: {{ $color }}; color: white; border: none; margin: 2px; border-radius: 0.375rem;">
+                      style="background-color: {{ $color }}; color: white; margin: 0.125rem 0;">
                 {{ $tag }}
               </button>
             </li>
