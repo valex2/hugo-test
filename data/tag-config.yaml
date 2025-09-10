@@ -55,7 +55,7 @@ tags:
     sections: ["projects", "experience"]
   
   "PCB Design":
-    color: "#D97706"  # make this orange 
+    color: "#D97706"  # Orange
     weight: 80
     sections: ["projects", "experience"]
   

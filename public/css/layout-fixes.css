@@ -19,11 +19,39 @@ html { scroll-padding-top: var(--header-h); }  /* anchors won't hide under heade
 
 /* -------------------- General content images -------------------- */
 .content img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   display: block;
   margin: 1rem auto;
   border-radius: .5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Make images in content areas more compact */
+.content p > img,
+.content > img {
+  max-width: 70%;
+}
+
+/* Full-width images when needed */
+.content img.full-width {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Side-by-side image containers */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.image-grid img {
+  flex: 1 1 300px;
+  max-width: 45%;
+  margin: 0;
 }
 
 /* -------------------- Natural ratio (no crop) -------------------- */

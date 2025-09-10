@@ -2,4 +2,4 @@
 title: "Blog"
 description: "Notes & essays"
 ---
-Welcome to my notes & essays.
+A collection of personal thoughts, notes, and essays.

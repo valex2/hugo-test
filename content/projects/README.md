@@ -42,10 +42,20 @@ Write your project content here using Markdown.
 
 1. Place all project images in `/static/images/projects/`
 2. Reference them in your markdown using the filename only (e.g., `cover: "project-screenshot.jpg"`)
-3. In your markdown content, use standard Markdown image syntax:
-   ```markdown
-   ![Alt text](project-screenshot.jpg)
+3. In your markdown content, use HTML for better control over image sizing:
+   ```html
+   <img src="project-screenshot.jpg" alt="Description of image" style="max-width: 80%; height: auto; display: block; margin: 1rem auto;">
    ```
+   
+   Or for multiple images side by side:
+   ```html
+   <div style="display: flex; gap: 1rem; justify-content: center; margin: 1rem 0;">
+     <img src="screenshot1.jpg" alt="First image" style="max-width: 45%; height: auto;">
+     <img src="screenshot2.jpg" alt="Second image" style="max-width: 45%; height: auto;">
+   </div>
+   ```
+   
+   Adjust the `max-width` percentage to control the image size while maintaining aspect ratio.
 
 ## Tags
 
