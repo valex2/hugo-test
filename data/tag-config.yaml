@@ -129,7 +129,7 @@ tags:
 
 # Display settings
 display:
-  max_visible_tags: 1
+  max_visible_tags: 4
   show_dropdown: true
   dropdown_text: "Show more"
   sort_by_weight: true

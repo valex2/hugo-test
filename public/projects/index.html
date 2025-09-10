@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
@@ -31,7 +31,7 @@
   
 
 
-<meta property="og:url" content="http://localhost:1314/projects/">
+<meta property="og:url" content="http://localhost:1313/projects/">
   <meta property="og:site_name" content="Vassili Alexopoulos">
   <meta property="og:title" content="Projects">
   <meta property="og:description" content="Selected builds, tools, and research notes.">
@@ -409,8 +409,12 @@
   
 
   
-  <div id="tag-filter" class="d-flex flex-wrap gap-2 justify-content-center mb-4" data-max-visible-tags="1">
-    <button class="btn btn-sm btn-outline-dark" data-tag="__all">All</button>
+  
+  
+  
+  <div id="tag-filter" class="d-flex flex-wrap gap-2 justify-content-center mb-4" data-max-visible-tags="4">
+    <button class="btn btn-sm btn-outline-dark filter-tag-btn" data-tag="__all">All</button>
+    
     
     
       
@@ -424,7 +428,7 @@
         
       
 
-      <button class="badge border-0" 
+      <button class="badge border-0 filter-tag-btn" 
               data-tag="firmware"
               style="background-color: #A78BFA; color: white">
         firmware
@@ -441,7 +445,7 @@
         
       
 
-      <button class="badge border-0" 
+      <button class="badge border-0 filter-tag-btn" 
               data-tag="system-engineering"
               style="background-color: #3B82F6; color: white">
         system engineering
@@ -458,7 +462,7 @@
         
       
 
-      <button class="badge border-0" 
+      <button class="badge border-0 filter-tag-btn" 
               data-tag="space"
               style="background-color: #34D399; color: white">
         space
@@ -475,79 +479,104 @@
         
       
 
-      <button class="badge border-0" 
+      <button class="badge border-0 filter-tag-btn" 
               data-tag="bioengineering"
               style="background-color: #34D399; color: white">
         bioengineering
       </button>
     
-      
-      
-      
-      
-      
-        
-        
-        
-        
-      
-
-      <button class="badge border-0" 
-              data-tag="neuroscience"
-              style="background-color: #10B981; color: white">
-        neuroscience
-      </button>
+    
+    
     
       
-      
-      
-      
-      
-        
-        
-        
-        
-      
+      <div class="dropdown filter-dropdown">
+        <button class="btn btn-sm btn-outline-secondary dropdown-toggle filter-dropdown-btn" 
+                type="button" 
+                id="filterDropdown-projects" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+          +4 more
+        </button>
+        <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterDropdown-projects">
+          
+            
+            
+            
+            
+            
+              
+              
+              
+              
+            
 
-      <button class="badge border-0" 
-              data-tag="research"
-              style="background-color: #A78BFA; color: white">
-        research
-      </button>
-    
-      
-      
-      
-      
-      
-        
-        
-        
-        
-      
+            <li>
+              <button class="dropdown-item filter-tag-btn p-2" 
+                      data-tag="neuroscience"
+                      style="background-color: #10B981; color: white; border: none; margin: 2px; border-radius: 0.375rem;">
+                neuroscience
+              </button>
+            </li>
+          
+            
+            
+            
+            
+            
+              
+              
+              
+              
+            
 
-      <button class="badge border-0" 
-              data-tag="health"
-              style="background-color: #8B5CF6; color: white">
-        health
-      </button>
-    
-      
-      
-      
-      
-      
-        
-        
-        
-        
-      
+            <li>
+              <button class="dropdown-item filter-tag-btn p-2" 
+                      data-tag="research"
+                      style="background-color: #A78BFA; color: white; border: none; margin: 2px; border-radius: 0.375rem;">
+                research
+              </button>
+            </li>
+          
+            
+            
+            
+            
+            
+              
+              
+              
+              
+            
 
-      <button class="badge border-0" 
-              data-tag="pcb-design"
-              style="background-color: #1D4ED8; color: white">
-        PCB design
-      </button>
+            <li>
+              <button class="dropdown-item filter-tag-btn p-2" 
+                      data-tag="health"
+                      style="background-color: #8B5CF6; color: white; border: none; margin: 2px; border-radius: 0.375rem;">
+                health
+              </button>
+            </li>
+          
+            
+            
+            
+            
+            
+              
+              
+              
+              
+            
+
+            <li>
+              <button class="dropdown-item filter-tag-btn p-2" 
+                      data-tag="pcb-design"
+                      style="background-color: #1D4ED8; color: white; border: none; margin: 2px; border-radius: 0.375rem;">
+                PCB design
+              </button>
+            </li>
+          
+        </ul>
+      </div>
     
   </div>
 
@@ -627,7 +656,7 @@
     
   
 
-  <div class="tag-container pt-1" data-max-visible-tags="1">
+  <div class="tag-container pt-1" data-max-visible-tags="4">
     <div class="tag-list d-flex flex-wrap gap-1">
       
         
@@ -775,7 +804,7 @@
     
   
 
-  <div class="tag-container pt-1" data-max-visible-tags="1">
+  <div class="tag-container pt-1" data-max-visible-tags="4">
     <div class="tag-list d-flex flex-wrap gap-1">
       
         
@@ -899,7 +928,7 @@
     
   
 
-  <div class="tag-container pt-1" data-max-visible-tags="1">
+  <div class="tag-container pt-1" data-max-visible-tags="4">
     <div class="tag-list d-flex flex-wrap gap-1">
       
         
@@ -1019,7 +1048,7 @@
     
   
 
-  <div class="tag-container pt-1" data-max-visible-tags="1">
+  <div class="tag-container pt-1" data-max-visible-tags="4">
     <div class="tag-list d-flex flex-wrap gap-1">
       
         
@@ -1115,7 +1144,7 @@
     
   
 
-  <div class="tag-container pt-1" data-max-visible-tags="1">
+  <div class="tag-container pt-1" data-max-visible-tags="4">
     <div class="tag-list d-flex flex-wrap gap-1">
       
         
@@ -1211,7 +1240,7 @@
     
   
 
-  <div class="tag-container pt-1" data-max-visible-tags="1">
+  <div class="tag-container pt-1" data-max-visible-tags="4">
     <div class="tag-list d-flex flex-wrap gap-1">
       
         
@@ -1315,7 +1344,7 @@
     
   
 
-  <div class="tag-container pt-1" data-max-visible-tags="1">
+  <div class="tag-container pt-1" data-max-visible-tags="4">
     <div class="tag-list d-flex flex-wrap gap-1">
       
         
@@ -1443,7 +1472,7 @@
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="http://localhost:1314/" title="Vassili Alexopoulos">
+                    <a href="http://localhost:1313/" title="Vassili Alexopoulos">
                         <img alt="Footer logo" src="/images/moray!.jpeg"
                             height="40px" width="40px">
                     </a>
