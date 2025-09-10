@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Experience_tags on Vassili Alexopoulos</title>
-    <link>http://localhost:62486/experience_tags/</link>
+    <link>http://localhost:1313/experience_tags/</link>
     <description>Recent content in Experience_tags on Vassili Alexopoulos</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:62486/experience_tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/experience_tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hardware Engineering</title>
-      <link>http://localhost:62486/experience_tags/hardware-engineering/</link>
+      <title>Hardware</title>
+      <link>http://localhost:1313/experience_tags/hardware/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62486/experience_tags/hardware-engineering/</guid>
+      <guid>http://localhost:1313/experience_tags/hardware/</guid>
       <description></description>
     </item>
     <item>
-      <title>Software Engineering</title>
-      <link>http://localhost:62486/experience_tags/software-engineering/</link>
+      <title>Software</title>
+      <link>http://localhost:1313/experience_tags/software/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62486/experience_tags/software-engineering/</guid>
+      <guid>http://localhost:1313/experience_tags/software/</guid>
       <description></description>
     </item>
     <item>
       <title>Nanoscience</title>
-      <link>http://localhost:62486/experience_tags/nanoscience/</link>
+      <link>http://localhost:1313/experience_tags/nanoscience/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62486/experience_tags/nanoscience/</guid>
+      <guid>http://localhost:1313/experience_tags/nanoscience/</guid>
       <description></description>
     </item>
     <item>
       <title>Control Systems</title>
-      <link>http://localhost:62486/experience_tags/control-systems/</link>
+      <link>http://localhost:1313/experience_tags/control-systems/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62486/experience_tags/control-systems/</guid>
+      <guid>http://localhost:1313/experience_tags/control-systems/</guid>
       <description></description>
     </item>
     <item>
       <title>PCB Design</title>
-      <link>http://localhost:62486/experience_tags/pcb-design/</link>
+      <link>http://localhost:1313/experience_tags/pcb-design/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62486/experience_tags/pcb-design/</guid>
+      <guid>http://localhost:1313/experience_tags/pcb-design/</guid>
       <description></description>
     </item>
     <item>
       <title>Signal Processing</title>
-      <link>http://localhost:62486/experience_tags/signal-processing/</link>
+      <link>http://localhost:1313/experience_tags/signal-processing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62486/experience_tags/signal-processing/</guid>
+      <guid>http://localhost:1313/experience_tags/signal-processing/</guid>
       <description></description>
     </item>
     <item>
       <title>Time Series Data Analysis</title>
-      <link>http://localhost:62486/experience_tags/time-series-data-analysis/</link>
+      <link>http://localhost:1313/experience_tags/time-series-data-analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62486/experience_tags/time-series-data-analysis/</guid>
+      <guid>http://localhost:1313/experience_tags/time-series-data-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Research</title>
-      <link>http://localhost:62486/experience_tags/research/</link>
+      <link>http://localhost:1313/experience_tags/research/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62486/experience_tags/research/</guid>
+      <guid>http://localhost:1313/experience_tags/research/</guid>
       <description></description>
     </item>
     <item>
       <title>Teaching</title>
-      <link>http://localhost:62486/experience_tags/teaching/</link>
+      <link>http://localhost:1313/experience_tags/teaching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62486/experience_tags/teaching/</guid>
+      <guid>http://localhost:1313/experience_tags/teaching/</guid>
       <description></description>
     </item>
   </channel>

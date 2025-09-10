@@ -2,186 +2,200 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:62486/blogs/advancing-viscerally-unhuman-technology/</loc>
+    <loc>http://localhost:1313/projects/-/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/project_tags/bioengineering/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/caffe.coli/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/data-driven-analysis-of-glioblastoma-treatment-patterns/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/project_tags/health/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/project_tags/neuroscience/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/population-activity-in-balanced-spiking-neural-networks-after-neuron-loss/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/project_tags/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/project_tags/research/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/project_tags/space/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/space-biology-@-stanford/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blogs/advancing-viscerally-unhuman-technology/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/blogs/</loc>
+    <loc>http://localhost:1313/blogs/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/tags/list1/</loc>
+    <loc>http://localhost:1313/tags/list1/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/tags/list2/</loc>
+    <loc>http://localhost:1313/tags/list2/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/tags/progress/</loc>
+    <loc>http://localhost:1313/tags/progress/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/blogs/some-title/</loc>
+    <loc>http://localhost:1313/blogs/some-title/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/tags/technology/</loc>
+    <loc>http://localhost:1313/tags/technology/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/</loc>
-    <lastmod>2025-09-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:62486/experience/</loc>
+    <loc>http://localhost:1313/experience/</loc>
     <lastmod>2025-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience_tags/</loc>
+    <loc>http://localhost:1313/experience_tags/</loc>
     <lastmod>2025-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience/until-hardware-engineer/</loc>
+    <loc>http://localhost:1313/experience_tags/hardware/</loc>
     <lastmod>2025-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience_tags/hardware-engineering/</loc>
+    <loc>http://localhost:1313/experience/until-hardware-engineer/</loc>
     <lastmod>2025-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience_tags/software-engineering/</loc>
+    <loc>http://localhost:1313/experience_tags/software/</loc>
     <lastmod>2025-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/projects/auv-crush/</loc>
+    <loc>http://localhost:1313/projects/auv-crush/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/project_tags/firmware/</loc>
+    <loc>http://localhost:1313/projects/auv-crush/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/project_tags/pcb-design/</loc>
+    <loc>http://localhost:1313/project_tags/firmware/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/project_tags/</loc>
+    <loc>http://localhost:1313/project_tags/hardware/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/projects/</loc>
+    <loc>http://localhost:1313/project_tags/pcb-design/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/project_tags/system-engineering/</loc>
+    <loc>http://localhost:1313/project_tags/pcbdesign/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/blogs/a-tale-of-two-shoulders/</loc>
+    <loc>http://localhost:1313/project_tags/software/</loc>
+    <lastmod>2025-08-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/project_tags/system-engineering/</loc>
+    <lastmod>2025-08-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blogs/a-tale-of-two-shoulders/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/tags/abundance/</loc>
+    <loc>http://localhost:1313/tags/abundance/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/tags/healthcare/</loc>
+    <loc>http://localhost:1313/tags/healthcare/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/</loc>
+    <loc>http://localhost:1313/achievements/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/tau-beta-pi-member/</loc>
+    <loc>http://localhost:1313/achievements/tau-beta-pi-member/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience/until-nanoparticle-engineer/</loc>
+    <loc>http://localhost:1313/experience/until-nanoparticle-engineer/</loc>
     <lastmod>2024-09-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience_tags/nanoscience/</loc>
+    <loc>http://localhost:1313/experience_tags/nanoscience/</loc>
     <lastmod>2024-09-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/panhellenic-scholarship-awardee/</loc>
+    <loc>http://localhost:1313/achievements/panhellenic-scholarship-awardee/</loc>
     <lastmod>2024-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience_tags/control-systems/</loc>
+    <loc>http://localhost:1313/experience_tags/control-systems/</loc>
     <lastmod>2024-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience/until--intern/</loc>
+    <loc>http://localhost:1313/experience/until--intern/</loc>
     <lastmod>2024-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/projects/data-driven-analysis-of-glioblastoma-treatment-patterns/</loc>
-    <lastmod>2024-06-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:62486/project_tags/health/</loc>
-    <lastmod>2024-06-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:62486/project_tags/research/</loc>
-    <lastmod>2024-06-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:62486/achievements/stanford-existential-risks-initiative-seri-summer-fellow/</loc>
+    <loc>http://localhost:1313/achievements/stanford-existential-risks-initiative-seri-summer-fellow/</loc>
     <lastmod>2024-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/project_tags/neuroscience/</loc>
-    <lastmod>2024-05-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:62486/projects/population-activity-in-balanced-spiking-neural-networks-after-neuron-loss/</loc>
-    <lastmod>2024-05-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:62486/experience_tags/pcb-design/</loc>
+    <loc>http://localhost:1313/experience_tags/pcb-design/</loc>
     <lastmod>2024-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience/apple/</loc>
+    <loc>http://localhost:1313/experience/apple/</loc>
     <lastmod>2024-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience_tags/signal-processing/</loc>
+    <loc>http://localhost:1313/experience_tags/signal-processing/</loc>
     <lastmod>2024-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience/zeit/</loc>
+    <loc>http://localhost:1313/experience/zeit/</loc>
     <lastmod>2023-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience_tags/time-series-data-analysis/</loc>
+    <loc>http://localhost:1313/experience_tags/time-series-data-analysis/</loc>
     <lastmod>2023-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/project_tags/space/</loc>
-    <lastmod>2023-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:62486/projects/space-biology-@-stanford/</loc>
-    <lastmod>2023-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:62486/experience_tags/research/</loc>
+    <loc>http://localhost:1313/experience_tags/research/</loc>
     <lastmod>2023-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience/bil/</loc>
+    <loc>http://localhost:1313/experience/bil/</loc>
     <lastmod>2023-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/project_tags/bioengineering/</loc>
-    <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:62486/projects/caffe.coli/</loc>
-    <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:62486/projects/-/</loc>
-    <lastmod>2022-12-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:62486/projects/raspberry-pi-computer-system/</loc>
+    <loc>http://localhost:1313/projects/raspberry-pi-computer-system/</loc>
     <lastmod>2022-11-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience_tags/teaching/</loc>
+    <loc>http://localhost:1313/experience_tags/teaching/</loc>
     <lastmod>2022-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/experience/teaching-@-stanford/</loc>
+    <loc>http://localhost:1313/experience/teaching-@-stanford/</loc>
     <lastmod>2022-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/boothe-prize-nominee/</loc>
+    <loc>http://localhost:1313/achievements/boothe-prize-nominee/</loc>
     <lastmod>2022-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/national-speech-and-debate-tournament-qualifier/</loc>
+    <loc>http://localhost:1313/achievements/national-speech-and-debate-tournament-qualifier/</loc>
     <lastmod>2021-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/fr.-james-w.-kirby-s.j.-science-award/</loc>
+    <loc>http://localhost:1313/achievements/fr.-james-w.-kirby-s.j.-science-award/</loc>
     <lastmod>2021-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/fr.-larry-belt-s.j.-tutoring-award/</loc>
+    <loc>http://localhost:1313/achievements/fr.-larry-belt-s.j.-tutoring-award/</loc>
     <lastmod>2021-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/state-champion-in-policy-debate/</loc>
+    <loc>http://localhost:1313/achievements/state-champion-in-policy-debate/</loc>
     <lastmod>2021-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/tournament-of-champions-qualifier/</loc>
+    <loc>http://localhost:1313/achievements/tournament-of-champions-qualifier/</loc>
     <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/national-merit-finalist/</loc>
+    <loc>http://localhost:1313/achievements/national-merit-finalist/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/degree-of-special-distinction/</loc>
+    <loc>http://localhost:1313/achievements/degree-of-special-distinction/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/achievements/ap-capstone-diploma-ap-scholar-with-distinction/</loc>
+    <loc>http://localhost:1313/achievements/ap-capstone-diploma-ap-scholar-with-distinction/</loc>
     <lastmod>2020-06-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:62486/categories/</loc>
+    <loc>http://localhost:1313/projects/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fr. James W. Kirby, S.J. Science Award on Vassili Alexopoulos</title>
-    <link>http://localhost:62486/achievements/fr.-james-w.-kirby-s.j.-science-award/</link>
+    <link>http://localhost:1313/achievements/fr.-james-w.-kirby-s.j.-science-award/</link>
     <description>Recent content in Fr. James W. Kirby, S.J. Science Award on Vassili Alexopoulos</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:62486/achievements/fr.-james-w.-kirby-s.j.-science-award/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/achievements/fr.-james-w.-kirby-s.j.-science-award/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

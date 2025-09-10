@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abundance on Vassili Alexopoulos</title>
-    <link>http://localhost:62486/tags/abundance/</link>
+    <link>http://localhost:1313/tags/abundance/</link>
     <description>Recent content in Abundance on Vassili Alexopoulos</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:62486/tags/abundance/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/abundance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Tale of Two Shoulders</title>
-      <link>http://localhost:62486/blogs/a-tale-of-two-shoulders/</link>
+      <link>http://localhost:1313/blogs/a-tale-of-two-shoulders/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62486/blogs/a-tale-of-two-shoulders/</guid>
+      <guid>http://localhost:1313/blogs/a-tale-of-two-shoulders/</guid>
       <description>About a year and a half ago, skiing through the Colorado backcountry, I tripped on a stray branch and suffered one of the most excruciating injuries of my life: an anterior shoulder dislocation. Ski patrol tried, and failed, to reduce it on the slopes. After an hour of snowmobiles, vans, and gritted teeth, an ER doctor finally slid my shoulder back in place.&#xA;Around the same time, my cousin, same age, height, build, and activity level, dislocated his shoulder while playing basketball in Greece.</description>
     </item>
   </channel>

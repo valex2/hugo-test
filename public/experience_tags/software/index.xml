@@ -15,5 +15,26 @@
       <guid>http://localhost:1313/experience/until-hardware-engineer/</guid>
       <description>Biological time travel.</description>
     </item>
+    <item>
+      <title>Hardware Engineer Intern @ Until</title>
+      <link>http://localhost:1313/experience/until--intern/</link>
+      <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/until--intern/</guid>
+      <description>Biological supercooling.</description>
+    </item>
+    <item>
+      <title>Software Engineer Intern @ Zeit Medical</title>
+      <link>http://localhost:1313/experience/zeit/</link>
+      <pubDate>Sun, 01 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/zeit/</guid>
+      <description>Built a framework to differentiate between high and low-quality EEG recordings.</description>
+    </item>
+    <item>
+      <title>Research Assistant @ Brain Interfacing Lab</title>
+      <link>http://localhost:1313/experience/bil/</link>
+      <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/bil/</guid>
+      <description>Designed and simulated spiking neural networks to study cortical lesioning.</description>
+    </item>
   </channel>
 </rss>

@@ -16,6 +16,9 @@ module:
     - source: "/Users/Vassilis/Documents/Obsidian Vault/PublicExperience"
       target: "content/experience"
 
+    - source: "/Users/Vassilis/Documents/Obsidian Vault/PublicProjects"
+      target: "content/projects"
+
     # (optional but recommended so Hugo knows about your other folders explicitly)
     - source: static
       target: static

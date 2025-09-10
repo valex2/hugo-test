@@ -1,0 +1,121 @@
+/* Project content styles */
+.project-content {
+  line-height: 1.7;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project-content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+}
+
+.project-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.project-content p {
+  margin-bottom: 1.25rem;
+}
+
+.project-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.project-content pre {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.project-content code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.875em;
+  background-color: rgba(27, 31, 35, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+}
+
+.project-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .project-content {
+    font-size: 0.95rem;
+  }
+  
+  .project-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .project-content h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Link styling */
+.project-content a {
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+.project-content a:hover {
+  color: #0a58ca;
+  text-decoration: underline;
+}
+
+/* List styling */
+.project-content ul,
+.project-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Blockquote styling */
+.project-content blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  border-left: 0.25rem solid #dee2e6;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Table styling */
+.project-content table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+}
+
+.project-content th,
+.project-content td {
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+}
+
+.project-content th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  text-align: left;
+}

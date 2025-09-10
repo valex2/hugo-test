@@ -7,52 +7,34 @@
     {{/* Tag filter bar */}}
     {{ partial "tag-filter-bar.html" (dict "pages" .Pages "section" "projects") }}
 
-    <div id="blog-grid" class="row justify-content-center px-3 px-md-5">
+    <div id="project-grid" class="row justify-content-center px-3 px-md-5">
       {{ range .Paginator.Pages }}
         {{ $p := . }}
         {{ $tags := $p.Params.project_tags }}
         {{ $tagsUrlized := slice }}
         {{ range $t := $tags }}{{ $tagsUrlized = $tagsUrlized | append ($t | urlize) }}{{ end }}
-        <div class="col-lg-4 col-md-6 my-3 post-card" data-tags="{{ delimit $tagsUrlized " " }}">
+        <div class="col-lg-4 col-md-6 my-3 project-card" data-tags="{{ delimit $tagsUrlized " " }}">
           <div class="card h-100">
-
             {{/* ------------ Card Image Resolver ------------- */}}
-            {{/* Accept cover | featuredImage | image */}}
             {{ $imgParam := or $p.Params.cover (or $p.Params.featuredImage $p.Params.image) }}
-
-            {{/* Helper: does a string look like an external or absolute URL? */}}
             {{ $isAbs := false }}
             {{ with $imgParam }}
               {{ $isAbs = or (hasPrefix . "http://") (or (hasPrefix . "https://") (hasPrefix . "/")) }}
-            {{ end }}
-
-            {{/* 1) If absolute or full URL, just use it */}}
-            {{ if and $imgParam $isAbs }}
-              <img
-                src="{{ $imgParam | relURL }}"
-                alt="{{ $p.Title }}" loading="lazy" decoding="async"
-                class="card-img-top obj-cover aspect-16x9">
-
-            {{/* 2) Else, try page-bundle resource by that exact name */}}
-            {{ else if and $imgParam ($p.Resources.GetMatch $imgParam) }}
-              {{ with $p.Resources.GetMatch $imgParam }}
-                {{ $card := .Fit "768x432 webp q75" }}
-                <img
-                  src="{{ $card.RelPermalink }}"
-                  width="{{ $card.Width }}" height="{{ $card.Height }}"
-                  alt="{{ $p.Title }}" loading="lazy" decoding="async"
-                  class="card-img-top obj-cover aspect-16x9">
-              {{ end }}
-
-            {{/* 3) Else, try a generic bundle match like cover* */}}
-            {{ else if $p.Resources.GetMatch "cover*" }}
-              {{ with $p.Resources.GetMatch "cover*" }}
-                {{ $card := .Fit "768x432 webp q75" }}
-                <img
-                  src="{{ $card.RelPermalink }}"
-                  width="{{ $card.Width }}" height="{{ $card.Height }}"
-                  alt="{{ $p.Title }}" loading="lazy" decoding="async"
-                  class="card-img-top obj-cover aspect-16x9">
+              {{ if $isAbs }}
+                <img src="{{ . | relURL }}" alt="{{ $p.Title }}" loading="lazy" decoding="async" class="card-img-top obj-cover aspect-16x9">
+              {{ else }}
+                {{ $imagePath := printf "/images/projects/%s" $imgParam }}
+                {{ $imageResource := resources.Get $imagePath }}
+                {{ if $imageResource }}
+                  {{ $resizedImage := $imageResource.Fit "768x432 webp q75" }}
+                  <img src="{{ $resizedImage.RelPermalink }}" 
+                       width="{{ $resizedImage.Width }}" 
+                       height="{{ $resizedImage.Height }}"
+                       alt="{{ $p.Title }}" 
+                       loading="lazy" 
+                       decoding="async"
+                       class="card-img-top obj-cover aspect-16x9">
+                {{ end }}
               {{ end }}
             {{ end }}
             {{/* ------------ /Card Image Resolver ------------- */}}
@@ -62,8 +44,8 @@
               <div class="text-secondary">
                 <small>{{ with $p.Date }}{{ .Format "Jan 2, 2006" }}{{ end }}</small>
               </div>
-              {{ with or $p.Params.summary $p.Params.description }}
-                <p class="card-text mt-2">{{ . }}</p>
+              {{ with or $p.Params.summary $p.Description }}
+                <p class="card-text mt-2">{{ . | truncate 150 }}</p>
               {{ end }}
               {{ if $tags }}
                 {{ partial "tag-system.html" (dict "tags" $tags "section" "projects" "context" .) }}
