@@ -37,6 +37,13 @@
       <description>Designed, developed, and tested an SNN model for robustness after neuron loss.</description>
     </item>
     <item>
+      <title>Raspberry Pi Computer System</title>
+      <link>http://localhost:1313/projects/raspberry-pi-computer-system/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/raspberry-pi-computer-system/</guid>
+      <description>Built a working computer system on a RPi from the ground up.</description>
+    </item>
+    <item>
       <title>Space Biology @ Stanford</title>
       <link>http://localhost:1313/projects/space-biology-@-stanford/</link>
       <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
@@ -63,13 +70,6 @@
       <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/experience/until-hardware-engineer/</guid>
       <description>Biological time travel.</description>
-    </item>
-    <item>
-      <title>AUV Crush</title>
-      <link>http://localhost:1313/projects/auv-crush/</link>
-      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/auv-crush/</guid>
-      <description>Autonomous underwater vehicle with CTD, DVL, and custom actuation.</description>
     </item>
     <item>
       <title>AUV Crush</title>
@@ -140,13 +140,6 @@
       <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/experience/bil/</guid>
       <description>Designed and simulated spiking neural networks to study cortical lesioning.</description>
-    </item>
-    <item>
-      <title>Raspberry Pi Computer System</title>
-      <link>http://localhost:1313/projects/raspberry-pi-computer-system/</link>
-      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/raspberry-pi-computer-system/</guid>
-      <description>Built a working computer system on a RPi from the ground up.</description>
     </item>
     <item>
       <title>Teaching @ Stanford</title>

@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/project_tags/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/project_tags/sample/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/sample-project/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/project_tags/web-development/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/projects/-/</loc>
     <lastmod>2025-09-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -14,6 +32,9 @@
     <loc>http://localhost:1313/projects/data-driven-analysis-of-glioblastoma-treatment-patterns/</loc>
     <lastmod>2025-09-08T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/project_tags/firmware/</loc>
+    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/project_tags/health/</loc>
     <lastmod>2025-09-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -23,10 +44,7 @@
     <loc>http://localhost:1313/projects/population-activity-in-balanced-spiking-neural-networks-after-neuron-loss/</loc>
     <lastmod>2025-09-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/project_tags/</loc>
-    <lastmod>2025-09-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>http://localhost:1313/projects/raspberry-pi-computer-system/</loc>
     <lastmod>2025-09-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/project_tags/research/</loc>
@@ -38,7 +56,7 @@
     <loc>http://localhost:1313/projects/space-biology-@-stanford/</loc>
     <lastmod>2025-09-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/project_tags/systems-engineering/</loc>
     <lastmod>2025-09-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blogs/advancing-viscerally-unhuman-technology/</loc>
@@ -83,25 +101,13 @@
     <loc>http://localhost:1313/projects/auv-crush/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/auv-crush/</loc>
-    <lastmod>2025-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/project_tags/firmware/</loc>
-    <lastmod>2025-08-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/project_tags/hardware/</loc>
-    <lastmod>2025-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/project_tags/pcb-design/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/project_tags/pcbdesign/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/project_tags/software/</loc>
-    <lastmod>2025-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/project_tags/system-engineering/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blogs/a-tale-of-two-shoulders/</loc>
@@ -157,9 +163,6 @@
   </url><url>
     <loc>http://localhost:1313/experience/bil/</loc>
     <lastmod>2023-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/raspberry-pi-computer-system/</loc>
-    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/experience_tags/teaching/</loc>
     <lastmod>2022-09-01T00:00:00+00:00</lastmod>

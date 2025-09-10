@@ -6,13 +6,34 @@
     <description>Recent content in Project_tags on Vassili Alexopoulos</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/project_tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sample</title>
+      <link>http://localhost:1313/project_tags/sample/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project_tags/sample/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Development</title>
+      <link>http://localhost:1313/project_tags/web-development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project_tags/web-development/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Bioengineering</title>
       <link>http://localhost:1313/project_tags/bioengineering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/project_tags/bioengineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Firmware</title>
+      <link>http://localhost:1313/project_tags/firmware/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project_tags/firmware/</guid>
       <description></description>
     </item>
     <item>
@@ -44,10 +65,10 @@
       <description></description>
     </item>
     <item>
-      <title>Firmware</title>
-      <link>http://localhost:1313/project_tags/firmware/</link>
+      <title>Systems Engineering</title>
+      <link>http://localhost:1313/project_tags/systems-engineering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/firmware/</guid>
+      <guid>http://localhost:1313/project_tags/systems-engineering/</guid>
       <description></description>
     </item>
     <item>
@@ -55,13 +76,6 @@
       <link>http://localhost:1313/project_tags/hardware/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/project_tags/hardware/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PCB Design</title>
-      <link>http://localhost:1313/project_tags/pcb-design/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/pcb-design/</guid>
       <description></description>
     </item>
     <item>
@@ -76,13 +90,6 @@
       <link>http://localhost:1313/project_tags/software/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/project_tags/software/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>System Engineering</title>
-      <link>http://localhost:1313/project_tags/system-engineering/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/system-engineering/</guid>
       <description></description>
     </item>
   </channel>

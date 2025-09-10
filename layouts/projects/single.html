@@ -1,23 +1,23 @@
 {{ define "main" }}
-<article class="container py-4 py-md-5">
-  <header class="mb-4">
-    <h1 class="mb-2">{{ .Title }}</h1>
+<article class="container py-5 page-with-sticky-header">
+  <header class="mb-3">
+    <h1 class="mb-1">{{ .Title }}</h1>
 
-    <div class="text-muted d-flex align-items-center flex-wrap gap-2 mb-3">
+    {{- $root := . -}}
+
+    <div class="text-secondary d-flex align-items-center gap-2">
       <small>{{ .Date.Format "Jan 2, 2006" }}</small>
       {{- $rt := .ReadingTime -}}
       {{- if gt $rt 0 -}}
-        <span class="text-muted" title="{{ .WordCount }} words">
-          · {{ $rt }} min read
+        <span class="text-secondary" title="{{ .WordCount }} words">
+          · {{ $rt }} {{ .Site.Params.singlePages.readTime.content }}
         </span>
       {{- end -}}
     </div>
 
-    {{/* Tag chips */}}
+    {{/* Project tags */}}
     {{ with .Params.project_tags }}
-      <div class="mb-3">
-        {{ partial "tag-system.html" (dict "tags" . "section" "projects" "context" .) }}
-      </div>
+      {{ partial "tag-system.html" (dict "tags" . "section" "projects" "context" $root) }}
     {{ end }}
 
     {{/* Project links */}}
@@ -51,64 +51,20 @@
     {{- end -}}
 
     {{ if gt (len $links) 0 }}
-      <div class="d-flex flex-wrap gap-2 mb-4">
+      <div class="mt-3 d-flex flex-wrap gap-2">
         {{ range $links }}
-          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary">
-            <i class="{{ .icon }} me-1"></i>
-            {{ .label }}
+          <a href="{{ .url }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">
+            {{ with .icon }}<i class="{{ . }} me-1" aria-hidden="true"></i>{{ end }}{{ .label }}
           </a>
         {{ end }}
       </div>
     {{ end }}
   </header>
 
-  <div class="project-content">
-    {{ .Content | safeHTML }}
+  <div class="content">
+    {{ $content := .Content | replaceRE "<img([^>]*)>" "<div class='text-center my-4'><img$1 class='img-fluid' style='max-width: 100%; height: auto;'></div>" | safeHTML }}
+    {{ $content }}
   </div>
-
-  {{/* Related projects */}}
-  {{ $related := .Site.RegularPages.Related . | first 3 }}
-  {{ with $related }}
-    <div class="mt-5 pt-4 border-top">
-      <h3 class="h5 mb-3">Related Projects</h3>
-      <div class="row g-3">
-        {{ range . }}
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm">
-              {{ $imgParam := or .Params.cover (or .Params.featuredImage .Params.image) }}
-              {{ if $imgParam }}
-                {{ $isAbs := or (hasPrefix $imgParam "http://") (or (hasPrefix $imgParam "https://") (hasPrefix $imgParam "/")) }}
-                <div class="card-img-top" style="height: 160px; overflow: hidden; background-color: #f8f9fa;">
-                  {{ if $isAbs }}
-                    <img src="{{ $imgParam | relURL }}" alt="{{ .Title }}" class="img-fluid w-100 h-100 obj-cover">
-                  {{ else }}
-                    {{ $imagePath := printf "/images/projects/%s" $imgParam }}
-                    {{ $imageResource := resources.Get $imagePath }}
-                    {{ if $imageResource }}
-                      {{ $cardImage := $imageResource.Fill "600x400 webp q75" }}
-                      <img src="{{ $cardImage.RelPermalink }}" 
-                           width="{{ $cardImage.Width }}" 
-                           height="{{ $cardImage.Height }}"
-                           alt="{{ .Title }}" 
-                           class="img-fluid w-100 h-100 obj-cover">
-                    {{ end }}
-                  {{ end }}
-                </div>
-              {{ end }}
-              <div class="card-body p-3">
-                <h5 class="card-title h6 mb-1">
-                  <a href="{{ .RelPermalink }}" class="stretched-link text-decoration-none">{{ .Title }}</a>
-                </h5>
-                {{ with .Params.summary }}
-                  <p class="card-text text-muted small mb-0">{{ . | truncate 100 }}</p>
-                {{ end }}
-              </div>
-            </div>
-          </div>
-        {{ end }}
-      </div>
-    </div>
-  {{ end }}
 </article>
 
 {{/* Add Disqus comments if enabled */}}
@@ -118,6 +74,7 @@
   </div>
 {{ end }}
 
-{{/* Include project styles */}}
-<link rel="stylesheet" href="/css/project-styles.css">
+{{/* Include callout styles */}}
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/layout-fixes.css">
 {{ end }}
