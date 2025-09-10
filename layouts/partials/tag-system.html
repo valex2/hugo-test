@@ -1,0 +1,86 @@
+{{/* 
+  Tag System Partial
+  Usage: {{ partial "tag-system.html" (dict "tags" .Params.tags "section" "blogs" "context" .) }}
+  or: {{ partial "tag-system.html" (dict "tags" .Params.project_tags "section" "projects" "context" .) }}
+*/}}
+
+{{ $tags := .tags }}
+{{ $section := .section }}
+{{ $context := .context }}
+{{ $tagConfig := index site.Data "tag-config" }}
+
+{{/* Fallback configuration if data file is not available */}}
+{{ if not $tagConfig }}
+  {{ $tagConfig = dict 
+    "tags" (dict)
+    "fallback_colors" (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA")
+    "display" (dict "max_visible_tags" 5 "show_dropdown" true "sort_by_weight" false)
+  }}
+{{ end }}
+
+{{ if $tags }}
+  {{ $sortedTags := slice }}
+  
+  {{/* Sort tags by weight if configured */}}
+  {{ if $tagConfig.display.sort_by_weight }}
+    {{ range $tag := $tags }}
+      {{ $weight := 0 }}
+      {{ with index $tagConfig.tags $tag }}
+        {{ $weight = .weight | default 0 }}
+      {{ end }}
+      {{ $sortedTags = $sortedTags | append (dict "name" $tag "weight" $weight) }}
+    {{ end }}
+    {{ $sortedTags = sort $sortedTags "weight" "desc" }}
+  {{ else }}
+    {{ range $tag := $tags }}
+      {{ $sortedTags = $sortedTags | append (dict "name" $tag "weight" 0) }}
+    {{ end }}
+  {{ end }}
+
+  <div class="tag-container pt-1" data-max-visible-tags="{{ $tagConfig.display.max_visible_tags | default 3 }}">
+    <div class="tag-list d-flex flex-wrap gap-1">
+      {{ range $i, $tagObj := $sortedTags }}
+        {{ $tag := $tagObj.name }}
+        {{ $color := "" }}
+        {{ $tagUrl := "" }}
+        
+        {{/* Determine tag color */}}
+        {{ with index $tagConfig.tags $tag }}
+          {{ $color = .color }}
+          {{/* Check if tag is valid for this section */}}
+          {{ if in .sections $section }}
+            {{ $color = .color }}
+          {{ else }}
+            {{/* Use fallback color if tag not configured for this section */}}
+            {{ $fallbackColors := $tagConfig.fallback_colors | default (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA") }}
+            {{ $fallbackIdx := mod (len $tag) (len $fallbackColors) }}
+            {{ $color = index $fallbackColors $fallbackIdx }}
+          {{ end }}
+        {{ else }}
+          {{/* Use fallback color for unconfigured tags */}}
+          {{ $fallbackColors := $tagConfig.fallback_colors | default (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA") }}
+          {{ $fallbackIdx := mod (len $tag) (len $fallbackColors) }}
+          {{ $color = index $fallbackColors $fallbackIdx }}
+        {{ end }}
+
+        {{/* Determine tag URL based on section */}}
+        {{ if eq $section "projects" }}
+          {{ $tagUrl = printf "/project_tags/%s/" ($tag | urlize) }}
+        {{ else if eq $section "experience" }}
+          {{ $tagUrl = printf "/experience_tags/%s/" ($tag | urlize) }}
+        {{ else if eq $section "blogs" }}
+          {{ $tagUrl = printf "/tags/%s/" ($tag | urlize) }}
+        {{ else }}
+          {{ $tagUrl = printf "/tags/%s/" ($tag | urlize) }}
+        {{ end }}
+
+        <a class="badge tag-chip border-0"
+           href="{{ $tagUrl }}"
+           data-filter="{{ $tag | urlize }}"
+           style="background-color: {{ $color }}; color: white; text-decoration: none;">
+          {{ $tag }}
+        </a>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

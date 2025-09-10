@@ -14,16 +14,8 @@
     </div>
 
     {{/* Tag chips under the title */}}
-    {{ $colors := slice "primary" "secondary" "success" "danger" "warning" "info" }}
     {{ with .Params.tags }}
-      <div class="pt-2 d-flex flex-wrap gap-1">
-        {{ range . }}
-          {{ $idx := mod (len .) (len $colors) }}
-          <a class="badge bg-{{ index $colors $idx }}" href="/tags/{{ . | urlize }}/" title="View posts tagged '{{ . }}'">
-            {{ . }}
-          </a>
-        {{ end }}
-      </div>
+      {{ partial "tag-system.html" (dict "tags" . "section" "blogs" "context" .) }}
     {{ end }}
   </header>
 

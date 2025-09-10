@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>System Engineering on Vassili Alexopoulos</title>
+    <link>http://localhost:1314/project_tags/system-engineering/</link>
+    <description>Recent content in System Engineering on Vassili Alexopoulos</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1314/project_tags/system-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AUV Crush</title>
+      <link>http://localhost:1314/projects/auv-crush/</link>
+      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/projects/auv-crush/</guid>
+      <description>Autonomous underwater vehicle with CTD, DVL, and custom actuation.</description>
+    </item>
+    <item>
+      <title>Raspberry Pi Computer System</title>
+      <link>http://localhost:1314/projects/raspberry-pi-computer-system/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/projects/raspberry-pi-computer-system/</guid>
+      <description>Built a working computer system on a RPi from the ground up.</description>
+    </item>
+  </channel>
+</rss>

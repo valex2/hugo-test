@@ -1,0 +1,135 @@
+tags:
+  # Software Engineering Tags
+  "Software Engineering":
+    color: "#8B5CF6"  # Purple
+    weight: 100
+    sections: ["experience", "projects", "blogs"]
+  
+  "Full Stack Development":
+    color: "#7C3AED"  # Deep Purple
+    weight: 95
+    sections: ["experience", "projects"]
+  
+  "Backend Development":
+    color: "#6D28D9"  # Dark Purple
+    weight: 90
+    sections: ["experience", "projects"]
+  
+  "Frontend Development":
+    color: "#A855F7"  # Light Purple
+    weight: 85
+    sections: ["experience", "projects"]
+  
+  # Hardware Tags
+  "Hardware":
+    color: "#06B6D4"  # Cyan
+    weight: 100
+    sections: ["projects", "experience"]
+  
+  "Electronics":
+    color: "#0891B2"  # Dark Cyan
+    weight: 95
+    sections: ["projects"]
+  
+  "Embedded Systems":
+    color: "#0E7490"  # Deep Cyan
+    weight: 90
+    sections: ["projects", "experience"]
+  
+  "PCB Design":
+    color: "#22D3EE"  # Light Cyan
+    weight: 85
+    sections: ["projects"]
+  
+  # Programming Languages
+  "Python":
+    color: "#F59E0B"  # Amber
+    weight: 90
+    sections: ["projects", "experience", "blogs"]
+  
+  "JavaScript":
+    color: "#EAB308"  # Yellow
+    weight: 85
+    sections: ["projects", "experience", "blogs"]
+  
+  "TypeScript":
+    color: "#D97706"  # Orange
+    weight: 85
+    sections: ["projects", "experience"]
+  
+  "C++":
+    color: "#DC2626"  # Red
+    weight: 80
+    sections: ["projects", "experience"]
+  
+  "Java":
+    color: "#B91C1C"  # Dark Red
+    weight: 75
+    sections: ["projects", "experience"]
+  
+  # Frameworks & Technologies
+  "React":
+    color: "#3B82F6"  # Blue
+    weight: 85
+    sections: ["projects", "experience"]
+  
+  "Node.js":
+    color: "#10B981"  # Emerald
+    weight: 80
+    sections: ["projects", "experience"]
+  
+  "Docker":
+    color: "#059669"  # Green
+    weight: 75
+    sections: ["projects", "experience"]
+  
+  "AWS":
+    color: "#047857"  # Dark Green
+    weight: 80
+    sections: ["projects", "experience"]
+  
+  # Data & AI
+  "Machine Learning":
+    color: "#EC4899"  # Pink
+    weight: 90
+    sections: ["projects", "experience", "blogs"]
+  
+  "Data Science":
+    color: "#DB2777"  # Dark Pink
+    weight: 85
+    sections: ["projects", "experience", "blogs"]
+  
+  "AI":
+    color: "#BE185D"  # Deep Pink
+    weight: 95
+    sections: ["projects", "experience", "blogs"]
+  
+  # Research & Academic
+  "Research":
+    color: "#7C2D12"  # Brown
+    weight: 85
+    sections: ["experience", "projects", "blogs"]
+  
+  "Academic":
+    color: "#92400E"  # Light Brown
+    weight: 80
+    sections: ["experience", "blogs"]
+  
+  # Default fallback colors for unspecified tags
+  fallback_colors:
+    - "#3B82F6"  # Blue
+    - "#1D4ED8"  # Dark Blue
+    - "#60A5FA"  # Light Blue
+    - "#10B981"  # Green
+    - "#059669"  # Dark Green
+    - "#34D399"  # Light Green
+    - "#8B5CF6"  # Lilac
+    - "#7C3AED"  # Dark Lilac
+    - "#A78BFA"  # Light Lilac
+
+# Display settings
+display:
+  max_visible_tags: 1
+  show_dropdown: true
+  dropdown_text: "Show more"
+  sort_by_weight: true

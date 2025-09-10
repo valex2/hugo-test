@@ -23,17 +23,9 @@
       {{- end -}}
     </div>
 
-    {{/* Tag chips (color logic like projects) */}}
-    {{ $colors := slice "primary" "secondary" "success" "danger" "warning" "info" }}
+    {{/* Tag chips */}}
     {{ with $root.Params.experience_tags }}
-      <div class="pt-2 d-flex flex-wrap gap-1">
-        {{ range . }}
-          {{ $idx := mod (len .) (len $colors) }}
-          <a class="badge bg-{{ index $colors $idx }}" href="/experience_tags/{{ . | urlize }}/">
-            {{ . }}
-          </a>
-        {{ end }}
-      </div>
+      {{ partial "tag-system.html" (dict "tags" . "section" "experience" "context" $root) }}
     {{ end }}
 
     {{/* -------- Link buttons (external, company, website, pdf, custom links) -------- */}}

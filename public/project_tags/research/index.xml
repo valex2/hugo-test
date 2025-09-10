@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research on Vassili Alexopoulos</title>
+    <link>http://localhost:1314/project_tags/research/</link>
+    <description>Recent content in Research on Vassili Alexopoulos</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1314/project_tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data-Driven Analysis of Glioblastoma Treatment Patterns</title>
+      <link>http://localhost:1314/projects/data-driven-analysis-of-glioblastoma-treatment-patterns/</link>
+      <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/projects/data-driven-analysis-of-glioblastoma-treatment-patterns/</guid>
+      <description>Analyzed unstructured medical records to uncover treatment patterns.</description>
+    </item>
+    <item>
+      <title>Population Activity in Balanced Spiking Neural Networks after Neuron Loss</title>
+      <link>http://localhost:1314/projects/population-activity-in-balanced-spiking-neural-networks-after-neuron-loss/</link>
+      <pubDate>Sun, 05 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/projects/population-activity-in-balanced-spiking-neural-networks-after-neuron-loss/</guid>
+      <description>Designed, developed, and tested an SNN model for robustness after neuron loss.</description>
+    </item>
+  </channel>
+</rss>

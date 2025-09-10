@@ -29,6 +29,10 @@ languageCode: "en-us"
 title: "Vassili Alexopoulos"
 theme: "hugo-profile"
 
+# Exclude drafts and future posts in production
+buildDrafts: false
+buildFuture: false
+
 # What Hugo should build for each kind of page
 outputs:
   home: ["HTML", "RSS", "JSON"]        # JSON enables /index.json for client-side search

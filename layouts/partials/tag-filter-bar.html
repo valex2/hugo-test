@@ -1,0 +1,96 @@
+{{/* 
+  Tag Filter Bar Partial
+  Usage: {{ partial "tag-filter-bar.html" (dict "pages" .Pages "section" "blogs") }}
+*/}}
+
+{{ $pages := .pages }}
+{{ $section := .section }}
+{{ $tagConfig := index site.Data "tag-config" }}
+
+{{/* Fallback configuration if data file is not available */}}
+{{ if not $tagConfig }}
+  {{ $tagConfig = dict 
+    "tags" (dict)
+    "fallback_colors" (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA")
+    "display" (dict "max_visible_tags" 5 "show_dropdown" true "sort_by_weight" false)
+  }}
+{{ end }}
+
+{{/* Collect all tags from pages */}}
+{{ $allTags := slice }}
+{{ range $pages }}
+  {{ $pageTags := slice }}
+  {{ if eq $section "projects" }}
+    {{ $pageTags = .Params.project_tags }}
+  {{ else if eq $section "experience" }}
+    {{ $pageTags = .Params.experience_tags }}
+  {{ else if eq $section "blogs" }}
+    {{ $pageTags = .Params.tags }}
+  {{ else }}
+    {{ $pageTags = .Params.tags }}
+  {{ end }}
+  
+  {{ with $pageTags }}
+    {{ $allTags = $allTags | union . }}
+  {{ end }}
+{{ end }}
+
+{{/* Debug: Print collected tags */}}
+<!-- DEBUG: Section: {{ $section }} -->
+<!-- DEBUG: Total pages: {{ len $pages }} -->
+<!-- DEBUG: All tags collected: {{ $allTags }} -->
+<!-- DEBUG: Tag count: {{ len $allTags }} -->
+
+{{ if gt (len $allTags) 0 }}
+  {{/* Sort tags by weight if configured */}}
+  {{ $sortedTags := slice }}
+  {{ if $tagConfig.display.sort_by_weight }}
+    {{ range $tag := $allTags }}
+      {{ $weight := 0 }}
+      {{ with index $tagConfig.tags $tag }}
+        {{ if in .sections $section }}
+          {{ $weight = .weight | default 0 }}
+        {{ end }}
+      {{ end }}
+      {{ $sortedTags = $sortedTags | append (dict "name" $tag "weight" $weight) }}
+    {{ end }}
+    {{ $sortedTags = sort $sortedTags "weight" "desc" }}
+  {{ else }}
+    {{ range $tag := $allTags }}
+      {{ $sortedTags = $sortedTags | append (dict "name" $tag "weight" 0) }}
+    {{ end }}
+  {{ end }}
+
+  {{ $maxVisibleTags := $tagConfig.display.max_visible_tags | default 5 }}
+  <div id="tag-filter" class="d-flex flex-wrap gap-2 justify-content-center mb-4" data-max-visible-tags="{{ $maxVisibleTags }}">
+    <button class="btn btn-sm btn-outline-dark" data-tag="__all">All</button>
+    
+    {{ range $i, $tagObj := $sortedTags }}
+      {{ $tag := $tagObj.name }}
+      {{ $color := "" }}
+      
+      {{/* Determine tag color */}}
+      {{ with index $tagConfig.tags $tag }}
+        {{ if in .sections $section }}
+          {{ $color = .color }}
+        {{ else }}
+          {{/* Use fallback color if tag not configured for this section */}}
+          {{ $fallbackColors := $tagConfig.fallback_colors | default (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA") }}
+          {{ $fallbackIdx := mod (len $tag) (len $fallbackColors) }}
+          {{ $color = index $fallbackColors $fallbackIdx }}
+        {{ end }}
+      {{ else }}
+        {{/* Use fallback color for unconfigured tags */}}
+        {{ $fallbackColors := $tagConfig.fallback_colors | default (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA") }}
+        {{ $fallbackIdx := mod (len $tag) (len $fallbackColors) }}
+        {{ $color = index $fallbackColors $fallbackIdx }}
+      {{ end }}
+
+      <button class="badge border-0" 
+              data-tag="{{ $tag | urlize }}"
+              style="background-color: {{ $color }}; color: white">
+        {{ $tag }}
+      </button>
+    {{ end }}
+  </div>
+{{ end }}

@@ -14,16 +14,8 @@
     </div>
 
     {{/* Tag chips */}}
-    {{ $colors := slice "primary" "secondary" "success" "danger" "warning" "info" }}
     {{ with .Params.project_tags }}
-      <div class="pt-2 d-flex flex-wrap gap-1">
-        {{ range . }}
-          {{ $idx := mod (len .) (len $colors) }}
-          <a class="badge bg-{{ index $colors $idx }}" href="/project_tags/{{ . | urlize }}/">
-            {{ . }}
-          </a>
-        {{ end }}
-      </div>
+      {{ partial "tag-system.html" (dict "tags" . "section" "projects" "context" .) }}
     {{ end }}
 
     {{/* -------- Link buttons (repo, website, pdf, etc.) under the tags -------- */}}

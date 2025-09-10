@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technology on Vassili Alexopoulos</title>
+    <link>http://localhost:1314/tags/technology/</link>
+    <description>Recent content in Technology on Vassili Alexopoulos</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advancing Viscerally Unhuman Technology</title>
+      <link>http://localhost:1314/blogs/advancing-viscerally-unhuman-technology/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/blogs/advancing-viscerally-unhuman-technology/</guid>
+      <description>A few days ago, a friend asked the following:&#xA;I&amp;rsquo;ve recently been wondering about the politics of unnatural technology. Like, what is the history of normalizing advancements that people find viscerally inhumane? Current technology in this bucket is pro-natal tech, BCI, cultivated meat, etc. Let me know if you have any thoughts or recommendations on what to read.&#xA;Two books come to mind that have helped me think about this. The first is Theodore Kaczynski’s Industrial Society and Its Future.</description>
+    </item>
+  </channel>
+</rss>

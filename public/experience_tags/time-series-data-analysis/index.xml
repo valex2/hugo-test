@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Time Series Data Analysis on Vassili Alexopoulos</title>
+    <link>http://localhost:1314/experience_tags/time-series-data-analysis/</link>
+    <description>Recent content in Time Series Data Analysis on Vassili Alexopoulos</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1314/experience_tags/time-series-data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software Engineer Intern @ Zeit Medical</title>
+      <link>http://localhost:1314/experience/zeit/</link>
+      <pubDate>Sun, 01 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/experience/zeit/</guid>
+      <description>Built a framework to differentiate between high and low-quality EEG recordings.</description>
+    </item>
+    <item>
+      <title>Research Assistant @ Brain Interfacing Lab</title>
+      <link>http://localhost:1314/experience/bil/</link>
+      <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/experience/bil/</guid>
+      <description>Designed and simulated spiking neural networks to study cortical lesioning.</description>
+    </item>
+  </channel>
+</rss>
