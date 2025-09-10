@@ -80,9 +80,41 @@ module:
 - `experience_tags`: Experience categorization
 - `categories`: General content categories
 
+### Tag System
+
+The tag system provides consistent styling and filtering across all content types with the following features:
+
+1. **Centralized Configuration**: Tags are managed in `data/tag-config.yaml` with:
+   - Custom colors for each tag
+   - Section-specific visibility
+   - Weight-based sorting
+   - Fallback color schemes
+
+2. **Key Features**:
+   - Case-insensitive tag matching
+   - Consistent colors across all pages
+   - Weight-based sorting (highest weight first, then alphabetical)
+   - Responsive dropdown for many tags
+   - Automatic fallback colors for unconfigured tags
+
+3. **Configuration Example**:
+
+   ```yaml
+   "Python":
+     color: "#F59E0B"  # Color in hex
+     weight: 90        # Higher appears first
+     sections: ["projects", "experience", "blogs"]
+   ```
+   
+
+4. **Usage in Content**:
+   - Blog posts: `tags: ["Python", "Machine Learning"]`
+   - Projects: `project_tags: ["Python", "Hardware"]`
+   - Experience: `experience_tags: ["Python", "Teaching"]`
+
 ### Custom Features
 - **Pretty URLs**: Custom permalinks for each section
-- **Tag filtering**: JavaScript-based filtering system
+- **Tag filtering**: JavaScript-based filtering system with consistent styling
 - **Obsidian callouts**: Custom partial for rendering callout blocks
 - **Image processing**: Intelligent cover image resolution
 

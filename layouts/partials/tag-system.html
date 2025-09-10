@@ -21,21 +21,32 @@
 {{ if $tags }}
   {{ $sortedTags := slice }}
   
-  {{/* Sort tags by weight if configured */}}
-  {{ if $tagConfig.display.sort_by_weight }}
-    {{ range $tag := $tags }}
-      {{ $weight := 0 }}
-      {{ with index $tagConfig.tags $tag }}
-        {{ $weight = .weight | default 0 }}
+  {{/* Create slice of tags with weights and names for sorting */}}
+  {{ $weightedTags := slice }}
+  {{ range $tag := $tags }}
+    {{ $weight := 0 }}
+    {{ $tagName := $tag }}
+    {{ $foundInConfig := false }}
+    
+    {{/* Find the tag in config (case-insensitive) */}}
+    {{ range $configTag, $config := $tagConfig.tags }}
+      {{ if eq (lower $configTag) (lower $tag) }}
+        {{ if in $config.sections $section }}
+          {{ $weight = $config.weight | default 0 }}
+          {{ $foundInConfig = true }}
+        {{ end }}
       {{ end }}
-      {{ $sortedTags = $sortedTags | append (dict "name" $tag "weight" $weight) }}
     {{ end }}
-    {{ $sortedTags = sort $sortedTags "weight" "desc" }}
-  {{ else }}
-    {{ range $tag := $tags }}
-      {{ $sortedTags = $sortedTags | append (dict "name" $tag "weight" 0) }}
-    {{ end }}
+    
+    {{ $weightedTags = $weightedTags | append (dict 
+      "name" $tagName
+      "weight" $weight
+      "lowerName" (lower $tagName)
+    ) }}
   {{ end }}
+  
+  {{/* Sort by weight (descending) and then by name (ascending) */}}
+  {{ $sortedTags = sort (sort $weightedTags "lowerName" "asc") "weight" "desc" }}
 
   <div class="tag-container pt-1" data-max-visible-tags="{{ $tagConfig.display.max_visible_tags | default 3 }}">
     <div class="tag-list d-flex flex-wrap gap-1">
@@ -45,19 +56,21 @@
         {{ $tagUrl := "" }}
         
         {{/* Determine tag color */}}
-        {{ with index $tagConfig.tags $tag }}
-          {{ $color = .color }}
-          {{/* Check if tag is valid for this section */}}
-          {{ if in .sections $section }}
-            {{ $color = .color }}
-          {{ else }}
-            {{/* Use fallback color if tag not configured for this section */}}
-            {{ $fallbackColors := $tagConfig.fallback_colors | default (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA") }}
-            {{ $fallbackIdx := mod (len $tag) (len $fallbackColors) }}
-            {{ $color = index $fallbackColors $fallbackIdx }}
+        {{ $color = "" }}
+        {{ $tagFound := false }}
+        
+        {{/* Find the tag in config (case-insensitive) */}}
+        {{ range $configTag, $config := $tagConfig.tags }}
+          {{ if eq (lower $configTag) (lower $tag) }}
+            {{ if in $config.sections $section }}
+              {{ $color = $config.color }}
+              {{ $tagFound = true }}
+            {{ end }}
           {{ end }}
-        {{ else }}
-          {{/* Use fallback color for unconfigured tags */}}
+        {{ end }}
+        
+        {{/* Use fallback color if tag not found or not in section */}}
+        {{ if not $tagFound }}
           {{ $fallbackColors := $tagConfig.fallback_colors | default (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA") }}
           {{ $fallbackIdx := mod (len $tag) (len $fallbackColors) }}
           {{ $color = index $fallbackColors $fallbackIdx }}

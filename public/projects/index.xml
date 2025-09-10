@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Vassili Alexopoulos</title>
-    <link>http://localhost:1314/projects/</link>
+    <link>http://localhost:62486/projects/</link>
     <description>Recent content in Projects on Vassili Alexopoulos</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 14 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1314/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:62486/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AUV Crush</title>
-      <link>http://localhost:1314/projects/auv-crush/</link>
+      <link>http://localhost:62486/projects/auv-crush/</link>
       <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/projects/auv-crush/</guid>
+      <guid>http://localhost:62486/projects/auv-crush/</guid>
       <description>Autonomous underwater vehicle with CTD, DVL, and custom actuation.</description>
     </item>
     <item>
       <title>Data-Driven Analysis of Glioblastoma Treatment Patterns</title>
-      <link>http://localhost:1314/projects/data-driven-analysis-of-glioblastoma-treatment-patterns/</link>
+      <link>http://localhost:62486/projects/data-driven-analysis-of-glioblastoma-treatment-patterns/</link>
       <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/projects/data-driven-analysis-of-glioblastoma-treatment-patterns/</guid>
+      <guid>http://localhost:62486/projects/data-driven-analysis-of-glioblastoma-treatment-patterns/</guid>
       <description>Analyzed unstructured medical records to uncover treatment patterns.</description>
     </item>
     <item>
       <title>Population Activity in Balanced Spiking Neural Networks after Neuron Loss</title>
-      <link>http://localhost:1314/projects/population-activity-in-balanced-spiking-neural-networks-after-neuron-loss/</link>
+      <link>http://localhost:62486/projects/population-activity-in-balanced-spiking-neural-networks-after-neuron-loss/</link>
       <pubDate>Sun, 05 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/projects/population-activity-in-balanced-spiking-neural-networks-after-neuron-loss/</guid>
+      <guid>http://localhost:62486/projects/population-activity-in-balanced-spiking-neural-networks-after-neuron-loss/</guid>
       <description>Designed, developed, and tested an SNN model for robustness after neuron loss.</description>
     </item>
     <item>
       <title>Space Biology @ Stanford</title>
-      <link>http://localhost:1314/projects/space-biology-@-stanford/</link>
+      <link>http://localhost:62486/projects/space-biology-@-stanford/</link>
       <pubDate>Wed, 10 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/projects/space-biology-@-stanford/</guid>
+      <guid>http://localhost:62486/projects/space-biology-@-stanford/</guid>
       <description>Helped revive the space biology community at Stanford.</description>
     </item>
     <item>
       <title>CaffE.Coli</title>
-      <link>http://localhost:1314/projects/caffe.coli/</link>
+      <link>http://localhost:62486/projects/caffe.coli/</link>
       <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/projects/caffe.coli/</guid>
+      <guid>http://localhost:62486/projects/caffe.coli/</guid>
       <description>Engineered E. coli to produce caffeine.</description>
     </item>
     <item>
       <title>🇬🇷 -&gt; 🚀</title>
-      <link>http://localhost:1314/projects/-/</link>
+      <link>http://localhost:62486/projects/-/</link>
       <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/projects/-/</guid>
+      <guid>http://localhost:62486/projects/-/</guid>
       <description>Built an L1 high-power rocket.</description>
     </item>
     <item>
       <title>Raspberry Pi Computer System</title>
-      <link>http://localhost:1314/projects/raspberry-pi-computer-system/</link>
+      <link>http://localhost:62486/projects/raspberry-pi-computer-system/</link>
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/projects/raspberry-pi-computer-system/</guid>
+      <guid>http://localhost:62486/projects/raspberry-pi-computer-system/</guid>
       <description>Built a working computer system on a RPi from the ground up.</description>
     </item>
   </channel>

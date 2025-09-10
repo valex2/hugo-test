@@ -42,24 +42,37 @@
 <!-- DEBUG: Tag count: {{ len $allTags }} -->
 
 {{ if gt (len $allTags) 0 }}
-  {{/* Sort tags by weight if configured */}}
-  {{ $sortedTags := slice }}
-  {{ if $tagConfig.display.sort_by_weight }}
-    {{ range $tag := $allTags }}
-      {{ $weight := 0 }}
-      {{ with index $tagConfig.tags $tag }}
-        {{ if in .sections $section }}
-          {{ $weight = .weight | default 0 }}
+  {{/* Create slice of tags with weights and names for sorting */}}
+  {{ $weightedTags := slice }}
+  {{ range $tag := $allTags }}
+    {{ $weight := 0 }}
+    {{ $tagName := $tag }}
+    {{ $foundInConfig := false }}
+    
+    {{/* Find the tag in config (case-insensitive) */}}
+    {{ range $configTag, $config := $tagConfig.tags }}
+      {{ if eq (lower $configTag) (lower $tag) }}
+        {{ if in $config.sections $section }}
+          {{ $weight = $config.weight | default 0 }}
+          {{ $foundInConfig = true }}
         {{ end }}
       {{ end }}
-      {{ $sortedTags = $sortedTags | append (dict "name" $tag "weight" $weight) }}
     {{ end }}
-    {{ $sortedTags = sort $sortedTags "weight" "desc" }}
-  {{ else }}
-    {{ range $tag := $allTags }}
-      {{ $sortedTags = $sortedTags | append (dict "name" $tag "weight" 0) }}
+    
+    {{/* If not found in config, use default weight and original case */}}
+    {{ if not $foundInConfig }}
+      {{ $weight = 0 }}
     {{ end }}
+    
+    {{ $weightedTags = $weightedTags | append (dict 
+      "name" $tagName
+      "weight" $weight
+      "lowerName" (lower $tagName)
+    ) }}
   {{ end }}
+  
+  {{/* Sort by weight (descending) and then by name (ascending) */}}
+  {{ $sortedTags := sort (sort $weightedTags "lowerName" "asc") "weight" "desc" }}
 
   {{ $maxVisibleTags := $tagConfig.display.max_visible_tags | default 5 }}
   {{ $totalTags := len $sortedTags }}
@@ -74,17 +87,18 @@
       {{ $color := "" }}
       
       {{/* Determine tag color */}}
-      {{ with index $tagConfig.tags $tag }}
-        {{ if in .sections $section }}
-          {{ $color = .color }}
-        {{ else }}
-          {{/* Use fallback color if tag not configured for this section */}}
-          {{ $fallbackColors := $tagConfig.fallback_colors | default (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA") }}
-          {{ $fallbackIdx := mod (len $tag) (len $fallbackColors) }}
-          {{ $color = index $fallbackColors $fallbackIdx }}
+      {{ $tagConfig := index site.Data "tag-config" }}
+      {{ $tagFound := false }}
+      {{ range $configTag, $config := $tagConfig.tags }}
+        {{ if eq (lower $configTag) (lower $tag) }}
+          {{ if in $config.sections $section }}
+            {{ $color = $config.color }}
+            {{ $tagFound = true }}
+          {{ end }}
         {{ end }}
-      {{ else }}
-        {{/* Use fallback color for unconfigured tags */}}
+      {{ end }}
+      {{ if not $tagFound }}
+        {{/* Use fallback color if tag not found or not in section */}}
         {{ $fallbackColors := $tagConfig.fallback_colors | default (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA") }}
         {{ $fallbackIdx := mod (len $tag) (len $fallbackColors) }}
         {{ $color = index $fallbackColors $fallbackIdx }}
@@ -112,19 +126,19 @@
           {{ range $i, $tagObj := after $maxVisibleTags $sortedTags }}
             {{ $tag := $tagObj.name }}
             {{ $color := "" }}
+            {{ $tagFound := false }}
             
             {{/* Determine tag color */}}
-            {{ with index $tagConfig.tags $tag }}
-              {{ if in .sections $section }}
-                {{ $color = .color }}
-              {{ else }}
-                {{/* Use fallback color if tag not configured for this section */}}
-                {{ $fallbackColors := $tagConfig.fallback_colors | default (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA") }}
-                {{ $fallbackIdx := mod (len $tag) (len $fallbackColors) }}
-                {{ $color = index $fallbackColors $fallbackIdx }}
+            {{ range $configTag, $config := $tagConfig.tags }}
+              {{ if eq (lower $configTag) (lower $tag) }}
+                {{ if in $config.sections $section }}
+                  {{ $color = $config.color }}
+                  {{ $tagFound = true }}
+                {{ end }}
               {{ end }}
-            {{ else }}
-              {{/* Use fallback color for unconfigured tags */}}
+            {{ end }}
+            {{ if not $tagFound }}
+              {{/* Use fallback color if tag not found or not in section */}}
               {{ $fallbackColors := $tagConfig.fallback_colors | default (slice "#3B82F6" "#1D4ED8" "#60A5FA" "#10B981" "#059669" "#34D399" "#8B5CF6" "#7C3AED" "#A78BFA") }}
               {{ $fallbackIdx := mod (len $tag) (len $fallbackColors) }}
               {{ $color = index $fallbackColors $fallbackIdx }}

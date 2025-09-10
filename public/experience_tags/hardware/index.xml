@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hardware on Vassili Alexopoulos</title>
-    <link>http://localhost:8888/experience_tags/hardware/</link>
+    <link>http://localhost:1313/experience_tags/hardware/</link>
     <description>Recent content in Hardware on Vassili Alexopoulos</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:8888/experience_tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/experience_tags/hardware/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hardware Engineering Intern @ Until Labs</title>
-      <link>http://localhost:8888/experience/until-hardware-engineer-intern/</link>
-      <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:8888/experience/until-hardware-engineer-intern/</guid>
-      <description>Biological supercooling.</description>
+      <title>Hardware Engineer @ Until</title>
+      <link>http://localhost:1313/experience/until-hardware-engineer/</link>
+      <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/until-hardware-engineer/</guid>
+      <description>Biological time travel.</description>
     </item>
   </channel>
 </rss>

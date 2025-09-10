@@ -1,10 +1,21 @@
 tags:
   # Software Engineering Tags
-  "Software Engineering":
+  "Software":
     color: "#8B5CF6"  # Purple
     weight: 100
     sections: ["experience", "projects", "blogs"]
   
+  "Time Series Data Analysis":
+    color: "#8B8B8B"  # make this a grey color
+    weight: 0
+    sections: ["experience", "projects", "blogs"]
+
+  "Control Systems":
+    color: "#8B8B8B"  # make this a grey color
+    weight: 0
+    sections: ["experience", "projects", "blogs"]
+
+  # Software Development Tags
   "Full Stack Development":
     color: "#7C3AED"  # Deep Purple
     weight: 95
@@ -20,6 +31,13 @@ tags:
     weight: 85
     sections: ["experience", "projects"]
   
+
+  # AI Tags
+  "Nanoscience":
+    color: "#1D4ED8"  # make this a dark blue
+    weight: 90
+    sections: ["experience", "projects"]
+
   # Hardware Tags
   "Hardware":
     color: "#06B6D4"  # Cyan
@@ -37,9 +55,9 @@ tags:
     sections: ["projects", "experience"]
   
   "PCB Design":
-    color: "#22D3EE"  # Light Cyan
-    weight: 85
-    sections: ["projects"]
+    color: "#D97706"  # make this orange 
+    weight: 80
+    sections: ["projects", "experience"]
   
   # Programming Languages
   "Python":
@@ -111,7 +129,7 @@ tags:
     sections: ["experience", "projects", "blogs"]
 
   "Research":
-    color: "#7C2D12"  # Brown
+    color: "#10B981"  # make this mint green 
     weight: 85
     sections: ["experience", "projects", "blogs"]
   
@@ -134,7 +152,7 @@ tags:
 
 # Display settings
 display:
-  max_visible_tags: 4
+  max_visible_tags: 5
   show_dropdown: true
-  dropdown_text: "Show more"
+  dropdown_text: "More"
   sort_by_weight: true

@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Project_tags on Vassili Alexopoulos</title>
-    <link>http://localhost:1314/project_tags/</link>
+    <link>http://localhost:62486/project_tags/</link>
     <description>Recent content in Project_tags on Vassili Alexopoulos</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 14 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1314/project_tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:62486/project_tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Firmware</title>
-      <link>http://localhost:1314/project_tags/firmware/</link>
+      <link>http://localhost:62486/project_tags/firmware/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/project_tags/firmware/</guid>
+      <guid>http://localhost:62486/project_tags/firmware/</guid>
       <description></description>
     </item>
     <item>
       <title>PCB Design</title>
-      <link>http://localhost:1314/project_tags/pcb-design/</link>
+      <link>http://localhost:62486/project_tags/pcb-design/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/project_tags/pcb-design/</guid>
+      <guid>http://localhost:62486/project_tags/pcb-design/</guid>
       <description></description>
     </item>
     <item>
       <title>System Engineering</title>
-      <link>http://localhost:1314/project_tags/system-engineering/</link>
+      <link>http://localhost:62486/project_tags/system-engineering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/project_tags/system-engineering/</guid>
+      <guid>http://localhost:62486/project_tags/system-engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>Health</title>
-      <link>http://localhost:1314/project_tags/health/</link>
+      <link>http://localhost:62486/project_tags/health/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/project_tags/health/</guid>
+      <guid>http://localhost:62486/project_tags/health/</guid>
       <description></description>
     </item>
     <item>
       <title>Research</title>
-      <link>http://localhost:1314/project_tags/research/</link>
+      <link>http://localhost:62486/project_tags/research/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/project_tags/research/</guid>
+      <guid>http://localhost:62486/project_tags/research/</guid>
       <description></description>
     </item>
     <item>
       <title>Neuroscience</title>
-      <link>http://localhost:1314/project_tags/neuroscience/</link>
+      <link>http://localhost:62486/project_tags/neuroscience/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/project_tags/neuroscience/</guid>
+      <guid>http://localhost:62486/project_tags/neuroscience/</guid>
       <description></description>
     </item>
     <item>
       <title>Space</title>
-      <link>http://localhost:1314/project_tags/space/</link>
+      <link>http://localhost:62486/project_tags/space/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/project_tags/space/</guid>
+      <guid>http://localhost:62486/project_tags/space/</guid>
       <description></description>
     </item>
     <item>
       <title>Bioengineering</title>
-      <link>http://localhost:1314/project_tags/bioengineering/</link>
+      <link>http://localhost:62486/project_tags/bioengineering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/project_tags/bioengineering/</guid>
+      <guid>http://localhost:62486/project_tags/bioengineering/</guid>
       <description></description>
     </item>
   </channel>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Software Engineering on Vassili Alexopoulos</title>
-    <link>http://localhost:1314/experience_tags/software-engineering/</link>
+    <link>http://localhost:62486/experience_tags/software-engineering/</link>
     <description>Recent content in Software Engineering on Vassili Alexopoulos</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1314/experience_tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:62486/experience_tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hardware Engineer @ Until</title>
-      <link>http://localhost:1314/experience/until-hardware-engineer/</link>
+      <link>http://localhost:62486/experience/until-hardware-engineer/</link>
       <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/experience/until-hardware-engineer/</guid>
+      <guid>http://localhost:62486/experience/until-hardware-engineer/</guid>
       <description>Biological time travel.</description>
     </item>
     <item>
       <title>Hardware Engineer Intern @ Until</title>
-      <link>http://localhost:1314/experience/until--intern/</link>
+      <link>http://localhost:62486/experience/until--intern/</link>
       <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/experience/until--intern/</guid>
+      <guid>http://localhost:62486/experience/until--intern/</guid>
       <description>Biological supercooling.</description>
     </item>
     <item>
       <title>Software Engineer Intern @ Zeit Medical</title>
-      <link>http://localhost:1314/experience/zeit/</link>
+      <link>http://localhost:62486/experience/zeit/</link>
       <pubDate>Sun, 01 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/experience/zeit/</guid>
+      <guid>http://localhost:62486/experience/zeit/</guid>
       <description>Built a framework to differentiate between high and low-quality EEG recordings.</description>
     </item>
   </channel>
